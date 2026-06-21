@@ -30,13 +30,15 @@ Founders don't need more contacts—they need the *right* intro at the *right* m
 
 ## Demo
 
-> **Add your demo link here before submission** — video, hosted app, or deck.
+**Live prototype:** [https://resona-aiboomi.vercel.app](https://resona-aiboomi.vercel.app)
 
 | Type | Link |
 |------|------|
-| Video / walkthrough | _TBD_ |
-| Hosted app | _TBD_ |
-| Slides / deck | _TBD_ |
+| Hosted app | [resona-aiboomi.vercel.app](https://resona-aiboomi.vercel.app) |
+| Video / walkthrough | _Add a Loom or YouTube link if you record one_ |
+| Slides / deck | _Optional_ |
+
+Built for **AIBoomi Startup Weekend** — a voice-first warm-intro matchmaker prototype.
 
 ### Run locally
 
@@ -79,4 +81,4 @@ MIT — see [LICENSE](LICENSE).
 
 ## Author
 
-Built for the Resona hackathon demo — [github.com/ajaysuwalka97/resona](https://github.com/ajaysuwalka97/resona).
+Ajay Suwalka — [github.com/ajaysuwalka97/resona](https://github.com/ajaysuwalka97/resona)

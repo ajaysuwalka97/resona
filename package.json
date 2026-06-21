@@ -9,7 +9,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test:unit": "node --test --import tsx \"src/**/*.test.ts\"",
-    "eval:transcript": "tsx scripts/eval-transcript.ts"
+    "eval:transcript": "tsx scripts/eval-transcript.ts",
+    "export:slides": "tsx scripts/export-slides.ts"
   },
   "keywords": [],
   "author": "Ajay Suwalka <ajaysuwalka97@gmail.com>",
@@ -34,6 +35,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.2",
     "concurrently": "^10.0.3",
+    "pptxgenjs": "^4.0.1",
     "tsx": "^4.22.4",
     "typescript": "^6.0.3",
     "vite": "^8.0.16"

@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resona — Pitch Deck</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --bg: #060916;
+        --panel: rgba(17, 24, 43, 0.78);
+        --border: rgba(132, 156, 218, 0.25);
+        --text: #edf2ff;
+        --muted: #9daecf;
+        --blue: #6f8eff;
+        --amber: #f6bd67;
+        --green: #78dba9;
+        --red: #ff7088;
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 15% 5%, #1a2440, transparent 45%),
+          radial-gradient(circle at 90% 15%, #362b1d, transparent 40%),
+          linear-gradient(160deg, #090d1c, var(--bg) 70%);
+      }
+
+      .deck { width: 100vw; height: 100vh; position: relative; }
+
+      .slide {
+        position: absolute;
+        inset: 0;
+        display: none;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        padding: 3rem 4rem 4rem;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 280ms ease, transform 280ms ease;
+      }
+
+      .slide.active {
+        display: grid;
+        opacity: 1;
+        transform: none;
+      }
+
+      .slide.full { grid-template-columns: 1fr; }
+
+      .kicker {
+        margin: 0 0 0.5rem;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--blue);
+      }
+
+      h1 {
+        margin: 0 0 1rem;
+        font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+        max-width: 16ch;
+      }
+
+      .bullets {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 0.6rem;
+      }
+
+      .bullets li {
+        padding-left: 1rem;
+        border-left: 2px solid var(--border);
+        font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+        line-height: 1.45;
+        color: #c8d5f5;
+      }
+
+      .bullets li em {
+        font-style: normal;
+        color: var(--amber);
+      }
+
+      .visual {
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        background: var(--panel);
+        padding: 1.5rem;
+        min-height: 280px;
+        display: grid;
+        place-items: center;
+      }
+
+      .visual svg { width: 100%; max-width: 420px; height: auto; }
+
+      .brand {
+        position: fixed;
+        top: 1.2rem;
+        left: 1.5rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .counter {
+        position: fixed;
+        bottom: 1.2rem;
+        left: 1.5rem;
+        font-size: 0.75rem;
+        color: var(--muted);
+      }
+
+      .hint {
+        position: fixed;
+        bottom: 1.2rem;
+        right: 1.5rem;
+        font-size: 0.72rem;
+        color: var(--muted);
+        display: flex;
+        gap: 0.75rem;
+      }
+
+      .hint a {
+        color: var(--blue);
+        text-decoration: none;
+      }
+
+      .hint a:hover { text-decoration: underline; }
+
+      /* Slide 3 — horizontal flow */
+      .flow-row {
+        display: flex;
+        align-items: stretch;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+        width: 100%;
+      }
+
+      .flow-card {
+        flex: 1;
+        padding: 1rem;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: var(--panel);
+        text-align: center;
+      }
+
+      .flow-card .icon {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 0.6rem;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-size: 1.2rem;
+        background: rgba(111, 142, 255, 0.15);
+        border: 1px solid rgba(111, 142, 255, 0.35);
+      }
+
+      .flow-card h3 {
+        margin: 0 0 0.35rem;
+        font-size: 0.85rem;
+        color: var(--amber);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .flow-card p {
+        margin: 0;
+        font-size: 0.78rem;
+        line-height: 1.4;
+        color: #c8d5f5;
+      }
+
+      .flow-arrow {
+        align-self: center;
+        color: var(--blue);
+        font-size: 1.4rem;
+        opacity: 0.6;
+      }
+
+      /* Slide 4 — pipeline pills */
+      .pipeline {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .pill {
+        padding: 0.65rem 1rem;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,0.04);
+        font-size: 0.82rem;
+        white-space: nowrap;
+      }
+
+      .pill small {
+        display: block;
+        font-size: 0.65rem;
+        color: var(--muted);
+        margin-top: 0.15rem;
+      }
+
+      .pill-arrow { color: var(--blue); opacity: 0.5; }
+
+      .tagline {
+        margin-top: 1.25rem;
+        text-align: center;
+        font-size: 0.95rem;
+        color: var(--green);
+      }
+
+      /* Slide 5 — node grid */
+      .node-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.75rem;
+        width: 100%;
+      }
+
+      .node {
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 2px solid var(--border);
+        display: grid;
+        place-items: center;
+        font-size: 0.7rem;
+        text-align: center;
+        padding: 0.5rem;
+        color: var(--muted);
+      }
+
+      .node.center {
+        border-color: var(--amber);
+        color: var(--amber);
+        background: rgba(246,189,103,0.1);
+        grid-column: 2 / span 2;
+        aspect-ratio: auto;
+        border-radius: 14px;
+        padding: 1rem;
+        font-size: 0.85rem;
+      }
+
+      .node.active { border-color: var(--green); color: var(--green); }
+
+      /* Slide 6 — timeline */
+      .timeline {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        width: 100%;
+        max-width: 720px;
+        margin: 1.5rem auto 0;
+      }
+
+      .phase {
+        padding: 1.25rem 1rem;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: var(--panel);
+        position: relative;
+      }
+
+      .phase::before {
+        content: "";
+        position: absolute;
+        top: 1.5rem;
+        right: -0.6rem;
+        width: 0.5rem;
+        height: 2px;
+        background: var(--blue);
+        opacity: 0.4;
+      }
+
+      .phase:last-child::before { display: none; }
+
+      .phase-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--green);
+        margin-bottom: 0.5rem;
+      }
+
+      .phase h3 {
+        margin: 0 0 0.4rem;
+        font-size: 1rem;
+      }
+
+      .phase p {
+        margin: 0;
+        font-size: 0.82rem;
+        line-height: 1.4;
+        color: #c8d5f5;
+      }
+
+      @media (max-width: 900px) {
+        .slide { grid-template-columns: 1fr; padding: 2rem; }
+        .flow-row, .timeline { flex-direction: column; grid-template-columns: 1fr; }
+        .flow-arrow { transform: rotate(90deg); }
+        .phase::before { display: none; }
+      }
+
+      @media print {
+        body { overflow: visible; }
+        .slide {
+          display: grid !important;
+          opacity: 1 !important;
+          transform: none !important;
+          page-break-after: always;
+          min-height: 100vh;
+        }
+        .hint, .counter, .brand { display: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="brand">Resona</div>
+
+    <div class="deck">
+      <!-- 1 Problem -->
+      <section class="slide active">
+        <div>
+          <p class="kicker">Problem</p>
+          <h1>Not a network problem. A retrieval problem.</h1>
+          <ul class="bullets">
+            <li>2–3 hops from the right intro — buried in someone else's contacts</li>
+            <li>Untagged, unsearchable, invisible</li>
+            <li>Founders default to <em>cold outreach</em></li>
+          </ul>
+        </div>
+        <div class="visual">
+          <svg viewBox="0 0 400 240" fill="none" aria-hidden="true">
+            <circle cx="60" cy="120" r="28" stroke="#6f8eff" stroke-width="2" fill="rgba(111,142,255,0.15)"/>
+            <text x="60" y="125" text-anchor="middle" fill="#edf2ff" font-size="11">You</text>
+            <circle cx="200" cy="120" r="28" stroke="#9daecf" stroke-width="2" stroke-dasharray="4 4" fill="rgba(157,174,207,0.08)"/>
+            <text x="200" y="118" text-anchor="middle" fill="#9daecf" font-size="10">?</text>
+            <text x="200" y="132" text-anchor="middle" fill="#9daecf" font-size="8">buried</text>
+            <circle cx="340" cy="120" r="28" stroke="#f6bd67" stroke-width="2" fill="rgba(246,189,103,0.12)"/>
+            <text x="340" y="125" text-anchor="middle" fill="#f6bd67" font-size="10">Match</text>
+            <line x1="88" y1="120" x2="172" y2="120" stroke="#6f8eff" stroke-width="1.5" opacity="0.4"/>
+            <line x1="228" y1="120" x2="312" y2="120" stroke="#ff7088" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.5"/>
+            <text x="200" y="200" text-anchor="middle" fill="#ff7088" font-size="12">warm path invisible</text>
+          </svg>
+        </div>
+      </section>
+
+      <!-- 2 Insight -->
+      <section class="slide">
+        <div>
+          <p class="kicker">Insight</p>
+          <h1>The graph exists. It's locked in connector brains.</h1>
+          <ul class="bullets">
+            <li>Value = <em>who to intro, when</em> — not a contact list</li>
+            <li>Voice captures nuance a form can't</li>
+            <li>We're digitizing the connector's brain</li>
+          </ul>
+        </div>
+        <div class="visual">
+          <svg viewBox="0 0 400 260" fill="none" aria-hidden="true">
+            <ellipse cx="200" cy="130" rx="90" ry="70" stroke="#6f8eff" stroke-width="1.5" fill="rgba(111,142,255,0.08)"/>
+            <circle cx="140" cy="100" r="12" fill="#78dba9"/><line x1="140" y1="100" x2="180" y2="120" stroke="#78dba9" stroke-width="1"/>
+            <circle cx="260" cy="90" r="12" fill="#78dba9"/><line x1="260" y1="90" x2="220" y2="115" stroke="#78dba9" stroke-width="1"/>
+            <circle cx="280" cy="160" r="12" fill="#78dba9"/><line x1="280" y1="160" x2="230" y2="140" stroke="#78dba9" stroke-width="1"/>
+            <circle cx="120" cy="165" r="12" fill="#78dba9"/><line x1="120" y1="165" x2="170" y2="145" stroke="#78dba9" stroke-width="1"/>
+            <circle cx="200" cy="130" r="22" stroke="#f6bd67" stroke-width="2" fill="rgba(246,189,103,0.2)"/>
+            <text x="200" y="135" text-anchor="middle" fill="#f6bd67" font-size="11">Connector</text>
+            <text x="200" y="230" text-anchor="middle" fill="#9daecf" font-size="11">judgment → scalable</text>
+          </svg>
+        </div>
+      </section>
+
+      <!-- 3 Solution -->
+      <section class="slide full">
+        <div>
+          <p class="kicker">Solution</p>
+          <h1>60 seconds. Real match. Ready intro.</h1>
+        </div>
+        <div class="flow-row">
+          <div class="flow-card">
+            <div class="icon">🎙</div>
+            <h3>Talk</h3>
+            <p>"Need seed intros to B2B SaaS angels who back GTM founders"</p>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-card">
+            <div class="icon">✦</div>
+            <h3>Match</h3>
+            <p>Sarah Chen · 92% · backed 2 similar bets · trust via Ajay</p>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-card">
+            <div class="icon">✉</div>
+            <h3>Intro</h3>
+            <p>3-line warm intro drafted — copy &amp; send</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 Tech -->
+      <section class="slide full">
+        <div style="text-align:center; max-width:720px; margin:0 auto;">
+          <p class="kicker">Tech</p>
+          <h1 style="max-width:none;">Grounded matching. No guessing.</h1>
+        </div>
+        <div class="pipeline">
+          <div class="pill">Voice<small>gpt-realtime-2</small></div>
+          <span class="pill-arrow">→</span>
+          <div class="pill">Transcribe<small>gpt-4o-mini-transcribe</small></div>
+          <span class="pill-arrow">→</span>
+          <div class="pill">Score<small>gpt-4.1-mini</small></div>
+          <span class="pill-arrow">→</span>
+          <div class="pill">Graph<small>candidates.json</small></div>
+          <span class="pill-arrow">→</span>
+          <div class="pill">Draft intro</div>
+        </div>
+        <p class="tagline">Every match backed by real relationship evidence</p>
+      </section>
+
+      <!-- 5 GTM -->
+      <section class="slide">
+        <div>
+          <p class="kicker">GTM</p>
+          <h1>One true graph. Then the next.</h1>
+          <ul class="bullets">
+            <li>Start with one super-connector's real network</li>
+            <li>Each match → reason for next connector to onboard</li>
+            <li>Compounds <em>person by person</em> — not scraped lists</li>
+          </ul>
+        </div>
+        <div class="visual">
+          <div class="node-grid">
+            <div class="node active">Ajay</div>
+            <div class="node">+1</div>
+            <div class="node">+2</div>
+            <div class="node">+3</div>
+            <div class="node center">Overlapping true graphs</div>
+            <div class="node">founder</div>
+            <div class="node">founder</div>
+            <div class="node">founder</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 Roadmap -->
+      <section class="slide full">
+        <div>
+          <p class="kicker">Roadmap</p>
+          <h1>Prosumer agent → open platform.</h1>
+        </div>
+        <div class="timeline">
+          <div class="phase">
+            <div class="phase-label">Start</div>
+            <h3>Prosumer agent</h3>
+            <p>Your connector brain — voice-native, one real graph, intros at scale</p>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Then</div>
+            <h3>Open platform</h3>
+            <p>Anyone onboard themselves · connect for real · not scraped lists</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="counter" id="counter">1 / 6</div>
+    <div class="hint">
+      <span>← → navigate</span>
+      <a href="export/resona-deck.pdf" download>PDF</a>
+      <a href="export/resona-deck.pptx" download>PPTX</a>
+    </div>
+
+    <script>
+      const slides = [...document.querySelectorAll(".slide")];
+      let i = 0;
+      const show = (n) => {
+        i = Math.max(0, Math.min(n, slides.length - 1));
+        slides.forEach((s, j) => s.classList.toggle("active", j === i));
+        counter.textContent = `${i + 1} / ${slides.length}`;
+      };
+      document.addEventListener("keydown", (e) => {
+        if (["ArrowRight", " ", "PageDown"].includes(e.key)) { e.preventDefault(); show(i + 1); }
+        if (["ArrowLeft", "PageUp"].includes(e.key)) { e.preventDefault(); show(i - 1); }
+      });
+      let x0 = 0;
+      document.addEventListener("touchstart", (e) => { x0 = e.changedTouches[0].screenX; });
+      document.addEventListener("touchend", (e) => {
+        const d = e.changedTouches[0].screenX - x0;
+        if (Math.abs(d) > 40) show(i + (d < 0 ? 1 : -1));
+      });
+    </script>
+  </body>
+</html>
