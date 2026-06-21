@@ -1,0 +1,1958 @@
+[
+  {
+    "id": "aakash-kushwaha",
+    "name": "Aakash Kushwaha",
+    "qualityTier": "tag-only",
+    "brings": [
+      {
+        "kind": "network",
+        "claim": "Sits in the IIT-Delhi alumni circle and Ajay's Bangalore AI-community event scene",
+        "evidence": "IITD alumni email (aakash.kushwaha@iitdalumni.com); co-attended a 2026-04-05 'Event discussion' planning call with Ajay and Subhashis Banerjee (Bharat1 Fund)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Two Apr-2026 event-planning touches ('Curate' 1:1 + 'Event discussion'); the Relationship section is an explicit placeholder, no deeper history.",
+      "lastTouch": "2026-04-05"
+    }
+  },
+  {
+    "id": "aayush-khandelwal",
+    "name": "Aayush Khandelwal",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Chartered Accountant who handles real personal tax filing end-to-end",
+        "evidence": "Filed Ajay's FY2024-25 ITR on 2025-09-10, recommended the new tax regime, and ran email-OTP verification when Ajay was off-grid in Ladakh."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Need a reliable CA / tax filing",
+        "situationPattern": "Someone in Ajay's orbit needs personal or early-startup tax/ITR work done by a low-friction professional",
+        "whyThisPerson": "Already files Ajay's own ITR and is trusted enough to act while Ajay is unreachable",
+        "evidence": "Handled the FY2024-25 filing + verification through the Ladakh outage (source note: historical-aayush-khandelwal-prakash-bhaiya-itr)."
+      }
+    ],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Ongoing professional service relationship as Ajay's CA, referred by a trusted hometown contact (Prakash Bhaiya); low-friction and dependable.",
+      "lastTouch": "2025-10 (per 150-message Sep–Oct 2025 thread)"
+    }
+  },
+  {
+    "id": "abhilash-crustdata-georgi",
+    "name": "Abhilash (Crustdata)",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "distribution"
+    ],
+    "brings": [
+      {
+        "kind": "resource",
+        "claim": "Crustdata decision-maker who can fund and platform a developer/AI event",
+        "evidence": "Scoped and paid Ajay ₹1L base + tiered KPIs to run the Bangalore Crustdata/YC hackathon (2026-04-06 call); Crustdata handled marketing, event page and YC repost."
+      },
+      {
+        "kind": "network",
+        "claim": "SF ↔ India bridge into Crustdata and YC orbit",
+        "evidence": "SF-based (+1 540), flew over for the Apr-2026 hackathon; was bringing a YC partner to meet hackathon winners."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Running a paid developer/AI event with a sponsor",
+        "situationPattern": "A founder needs a sponsor/venue/marketing partner to stand up a credible dev or AI community event",
+        "whyThisPerson": "Has literally commissioned and co-run exactly this with Ajay, with budget and a YC tie-in",
+        "evidence": "2026-04 Crustdata/YC Bangalore hackathon engagement (₹1L + KPIs)."
+      }
+    ],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Real paid working engagement co-running an event; substantive but transactional and ~2 months old.",
+      "lastTouch": "2026-04 (hackathon window)"
+    }
+  },
+  {
+    "id": "abhinandan-shah",
+    "name": "Abhinandan Shah",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "network",
+        "claim": "Direct line into UAE government and sovereign-wealth ecosystem",
+        "evidence": "Head of AI, Dept. of Finance, Abu Dhabi Government; controls budgets across 60 Abu Dhabi entities with exposure to sovereign wealth fund ADQ (2026-01-26 catch-up)."
+      },
+      {
+        "kind": "judgment",
+        "claim": "Government/financial-services AI-adoption perspective at national scale",
+        "evidence": "Briefed Ajay on UAE AI-diffusion, 10-generation strategic planning, and banking-sector dynamics; ex-Barclays Pune before the Abu Dhabi role."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Opening a UAE / Gulf government or sovereign-fund door",
+        "situationPattern": "A founder needs an entry point to UAE government, ADQ, or a student-financing / fintech partnership in the Gulf",
+        "whyThisPerson": "Holds the Head-of-AI seat at Abu Dhabi DoF and already flagged as a Dubai-2035 / student-financing lead",
+        "evidence": "Committed to join Net Intel's first 100 users and offered Ajay a UAE visit with multiple intros (2026-01-26)."
+      }
+    ],
+    "trustEdge": {
+      "band": "strong",
+      "rationale": "Long-standing pre-Net-Intel friend; reconnected after 2+ years with genuine warmth and a concrete commitment to help.",
+      "lastTouch": "2026-03-11 (WhatsApp 'Please take care')"
+    }
+  },
+  {
+    "id": "abhishek-das-sourcingxpress",
+    "name": "Abhishek Das",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "distribution"
+    ],
+    "brings": [
+      {
+        "kind": "network",
+        "claim": "Bangalore AI / graph-DB community organizer with Neo4j and Postman keynote reach",
+        "evidence": "Co-organized the AI Community Mixer (2026-04-23), pulling Neo4j + Postman as keynote partners; active in Neo4j/GraphDB circles."
+      },
+      {
+        "kind": "capability",
+        "claim": "Runs community-event logistics end-to-end (venue, partners, Luma page)",
+        "evidence": "2026-04-04 planning call: owned venue shortlist, Postman confirmation, and event-page finalization while Ajay brought the network side."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Standing up a Bangalore tech-community event with vendor keynotes",
+        "situationPattern": "Need a co-organizer who can land infra-vendor keynote partners and run on-ground logistics",
+        "whyThisPerson": "Has co-run multiple Bangalore events with Ajay and brings the graph-DB/Neo4j community specifically",
+        "evidence": "Repositioned a graph event into the AI Community Mixer once Postman joined Neo4j (2026-04-04)."
+      }
+    ],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Recurring event-co-organizer relationship with heavy March–April 2026 collaboration cadence.",
+      "lastTouch": "2026-05-06 (WhatsApp digest)"
+    }
+  },
+  {
+    "id": "abhishek-vyas-wasp",
+    "name": "Abhishek Vyas",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "judgment",
+        "claim": "Deep founder↔VC match-quality expertise and growth/targeting strategy",
+        "evidence": "Building Wasp (consumer-AI solving founder↔capital match); 200+ founder and 100+ VC conversations; advised Ajay on high-binding-energy community targeting (2026-02-03)."
+      },
+      {
+        "kind": "network",
+        "claim": "Onboarded investor relationships he can route founders into",
+        "evidence": "10 investors onboarded to Wasp incl. Antler, Accel, a Peak XV partner; runs weekly events with 40 founders (2026-01-16 capture)."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Founder needs help targeting the right VCs / avoiding wasted raises",
+        "situationPattern": "A founder is about to spend months on the wrong investor conversations and needs match-quality triage",
+        "whyThisPerson": "His entire product and 300+ conversations are about exactly this; ran a weekly advisory cadence with Ajay on it",
+        "evidence": "Wasp thesis: founders waste 2-3 months on wrong VC conversations (2026-01-16); Sat-eve/Mon-morning advisory with Ajay."
+      }
+    ],
+    "trustEdge": {
+      "band": "strong",
+      "rationale": "Strategic Net Intel advisor with a sustained weekly working cadence; introduced by Gautam Kapur and bonded over a shared obsession with high-stakes networks.",
+      "lastTouch": "2026-03 (WhatsApp thread)"
+    }
+  },
+  {
+    "id": "abrar-ahmed",
+    "name": "Abrar Ahmed",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "AI/data-systems engineer with legacy-bank integration experience",
+        "evidence": "At Kenai Global on AI/data systems for legacy-bank integration (~30 LPA base + bonus), per the 2026-03-06 career-transition session."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Single recruitment/networking conversation; Ajay pitched Net Intel and asked him to scout EM candidates. No ongoing relationship captured.",
+      "lastTouch": "2026-03-06"
+    }
+  },
+  {
+    "id": "ajeet-mesa",
+    "name": "Ajeet (Mesa)",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "network",
+        "claim": "Access to Mesa's UG founding-cohort and its student/hackathon pipeline",
+        "evidence": "Mesa team member coordinating mentor recruitment for campus AI hackathons and the 'Build Your Own Product' sprint (~30-35 teams, 100+ participants)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Met at a 2024 hackathon; recurring but lightweight mentor-recruitment touchpoint, not a close relationship.",
+      "lastTouch": "2026-04-02"
+    }
+  },
+  {
+    "id": "akhil-agrawal",
+    "name": "Akhil Agrawal",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "lived_experience",
+        "claim": "Building an LLM-OS / AI-agent product from scratch (Para)",
+        "evidence": "Founder of Para, 'the LLM OS you activate in phone/Slack/Teams'; started as an AI research assistant for PMs (2026-01-02 + 2026-04-17 self-intro)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Founder-to-founder catch-up; swapped pitches and Para beta access, but no sustained relationship captured.",
+      "lastTouch": "2026-04-17"
+    }
+  },
+  {
+    "id": "akshat-suwalka",
+    "name": "Akshat Suwalka",
+    "qualityTier": "tag-only",
+    "brings": [],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Family cousin (IIT-Kgp engineer, Mumbai) who addresses Ajay as 'bhaiya'; a family tie, not a professional working relationship.",
+      "lastTouch": "2026-05-07 (anniversary greeting)"
+    }
+  },
+  {
+    "id": "akshata-nagare",
+    "name": "Akshata Nagare",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Ontology / knowledge-representation and AI-research engineering",
+        "evidence": "Ran an ontology project at Accordion; paired with Ajay on Net Intel's knowledge-graph and local-model engineering across Aug 2025 sessions."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Hands-on early Net Intel collaborator across multiple founding-era working sessions; stayed in touch afterward.",
+      "lastTouch": "2025-08-27 (engineering session); later WhatsApp"
+    }
+  },
+  {
+    "id": "amish-jain",
+    "name": "Amish Jain",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "lived_experience",
+        "claim": "Tech-to-hospitality pivot perspective and edtech PM experience",
+        "evidence": "IITB CSE → Oracle → PM at SuperKalam (UPSC answer-evaluation) → Masters in Psychology while pivoting to real-estate/hospitality in Indore (2025-10-06 session)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Two exploratory Net Intel sessions in late 2025; a potential-collaborator relationship that didn't deepen.",
+      "lastTouch": "2025-12-06 (end of WhatsApp burst)"
+    }
+  },
+  {
+    "id": "anagh-prasad",
+    "name": "Anagh Prasad",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "resource",
+        "claim": "Institutional VC at Accel (early/growth-stage capital)",
+        "evidence": "Investor at Accel; co-headlined an AI-community event Ajay hosted alongside Ashray Malhotra (Rephrase.ai)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One shared event co-speaking slot; identity/details still being confirmed, no working relationship.",
+      "lastTouch": "2026-05 (referenced on a call)"
+    }
+  },
+  {
+    "id": "anirudh-akshit",
+    "name": "Anirudh",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "lived_experience",
+        "claim": "Seed-stage founder who has raised and built a founding team",
+        "evidence": "Raised a seed round from Nexus Venture Partners, secured an office, and was hiring 6 founding-member roles (2025-08-18 recruitment session)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Came via Akshit (college senior) for top-of-funnel recruitment help; a single pre-pivot touchpoint.",
+      "lastTouch": "2026-04-06"
+    }
+  },
+  {
+    "id": "anita-rego",
+    "name": "Anita Rego",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "conviction"
+    ],
+    "brings": [
+      {
+        "kind": "judgment",
+        "claim": "Computational-social-science research method and IRB/ethics framing",
+        "evidence": "Anchored Net Intel's grounded-theory + IRB-ethics approach and the Granovetter weak-ties framing; flagged an Oxford comp-soc PhD pipeline (2025-10-14)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One deep research-framework session (AmitaCare); a single-occurrence collaborator, not an ongoing tie.",
+      "lastTouch": "2025-10-14"
+    }
+  },
+  {
+    "id": "ankur-gattani",
+    "name": "Ankur Gattani",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "distribution"
+    ],
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Senior growth/GTM leadership — ex-Chief Growth Officer at WebEngage",
+        "evidence": "IITB '06, ex-WebEngage CGO (Growth), Udaipur Ecell cofounder; designing a GTM-focused community for growth-marketing founders (2025-10-17 sessions)."
+      },
+      {
+        "kind": "network",
+        "claim": "Growth-marketing founder community and Rajasthan network",
+        "evidence": "Surveying GTM communities and building a 'Coffee Platform' matchmaking concept; introduced to Ajay via Viren after working together."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Need senior growth/GTM muscle or a growth-founder community",
+        "situationPattern": "A founder needs to design a go-to-market function or tap a network of growth-marketing operators",
+        "whyThisPerson": "Ran growth at the CGO level at WebEngage and is actively convening growth-marketing founders",
+        "evidence": "Ex-WebEngage CGO; community-building framework discussion with Ajay (2025-10-17)."
+      }
+    ],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Rajasthan-network kinship plus a real adjacent-thesis relationship; 99-message exchange Oct 2025–Feb 2026.",
+      "lastTouch": "2026-02-17"
+    }
+  },
+  {
+    "id": "anuj-bhargava-curvo",
+    "name": "Anuj Bhargava",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "judgment",
+        "claim": "Operating/scaling judgment as CTO @ Curvo AI and ex-COO @ Ola",
+        "evidence": "Gave Ajay a sharp read on Net Intel's two-tier signal model and surfaced sales pre-call research as a use case (2026-04-28)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One substantive product walkthrough; Relationship section is a placeholder, UK-based, no ongoing history.",
+      "lastTouch": "2026-04-28"
+    }
+  },
+  {
+    "id": "anumati-suwalka",
+    "name": "Anumati Suwalka",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "distribution"
+    ],
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Performance-marketing operator (~2 yrs at a consumer fintech)",
+        "evidence": "Performance marketer at 5paisa (trading app), Mumbai-based, ~2 years in perf marketing (historical-anumati-suwalka-kota source note)."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Need hands-on performance-marketing help",
+        "situationPattern": "Someone needs practitioner-level paid/performance-marketing input for a consumer product",
+        "whyThisPerson": "Does perf marketing day-to-day at a consumer fintech and is family-close to Ajay",
+        "evidence": "~2 years perf marketing at 5paisa (per her WhatsApp thread with Ajay, Dec 2025)."
+      }
+    ],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Family (3rd cousin) with genuine sibling-coded rapport ('apan dono bhai behn lagte hai'); warm and candid, though the tie is personal not professional.",
+      "lastTouch": "2025-12-25"
+    }
+  },
+  {
+    "id": "anupam-kichloo",
+    "name": "Anupam Kichloo",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "distribution"
+    ],
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Deep marketplace/SEO and product-marketing expertise (13 yrs Amazon L5/L6)",
+        "evidence": "13 years at Amazon (L5/L6) in product marketing and search/SEO; consultant on AEO/GEO (2025-07-31 session)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "An Asvaai-era collaborator reached via Viren, with Ajay mostly observing; the direct Ajay↔Anupam relationship is thin.",
+      "lastTouch": "2026-03 (Viren-driven thread)"
+    }
+  },
+  {
+    "id": "anurag-gupta",
+    "name": "Anurag Gupta",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Backend / voice-AI engineer who builds infra from scratch",
+        "evidence": "Built MAI's AWS-deployed backend with Vishal Singh (Jul–Oct 2025); extensive voice-AI framework experience; was considered as an early Net Intel cofounder."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Deep shared MAI build history and an early-cofounder evaluation; still warm in 2026 ('how's MillionAI? 😀'), currently CTO-hunting.",
+      "lastTouch": "2026-03-25"
+    }
+  },
+  {
+    "id": "arbaz-shaikh",
+    "name": "Arbaz Shaikh",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "conviction"
+    ],
+    "brings": [
+      {
+        "kind": "judgment",
+        "claim": "First-principles problem-definition and research-grade technical depth",
+        "evidence": "IITB patent during undergrad, math research in Europe; ran 'simplest/cheapest/fastest' and general-vs-specific problem-framing working sessions with Ajay (2026-03-17)."
+      },
+      {
+        "kind": "lived_experience",
+        "claim": "Returned-to-India deep-tech builder exploring hard problems",
+        "evidence": "Came back to India when ChatGPT launched; recently quit to explore options; Ajay took him to the DeVC call as a cofounder prospect (2026-04-08)."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Pressure-testing a hard technical thesis / problem definition",
+        "situationPattern": "A founder needs someone to rigorously stress-test the problem framing behind a deep-tech idea",
+        "whyThisPerson": "Brings patent-grade research depth and a methodology Ajay specifically valued enough to explore cofounding",
+        "evidence": "Methodology-alignment sessions (2026-01-17, 2026-03-17) and the DeVC cofounder-prospect visit."
+      }
+    ],
+    "trustEdge": {
+      "band": "strong",
+      "rationale": "Cofounder-fit exploration with deep, repeated working sessions and heavy Feb–Mar 2026 contact; a high-trust edge.",
+      "lastTouch": "2026-03-21"
+    }
+  },
+  {
+    "id": "archa-mesa",
+    "name": "Archa (Mesa)",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "network",
+        "claim": "Mesa student-experience access for the UG founding cohort",
+        "evidence": "Mesa team member (student experience, reports to Mansa); ran hackathon mentor recruitment for a 96-student cohort (2025-08-26)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Single mentor-recruitment touchpoint, referred by Prakhar; no ongoing relationship.",
+      "lastTouch": "2025-08-26"
+    }
+  },
+  {
+    "id": "arjun-gupta",
+    "name": "Arjun Gupta",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Backend specialist who built Net Intel's infrastructure and owns the WhatsApp assistant pipeline",
+        "evidence": "Built the backend from problem identification to implementation; owns the 'Ajay assistant' WhatsApp pipeline; daily pair-coding/architecture sessions through 2026."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "strong",
+      "rationale": "Works directly with Ajay every day; retained over the other intern because he chose Net Intel over a competing offer; Ajay both employs and career-coaches him.",
+      "lastTouch": "2026-05-16 (pair-coding session)"
+    }
+  },
+  {
+    "id": "arya-marda",
+    "name": "Arya Marda",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Senior product/systems engineer who built Net Intel's core pipeline as an IC",
+        "evidence": "IIIT-Hyderabad SDE, Google Hackathon winner; was on a Net Intel CTO-track (3% equity offer, vesting backdated to Dec 2025) building product/architecture before the engagement ended."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "strong",
+      "rationale": "Daily collaborator and near-CTO for ~4 months with an equity relationship; wound down amicably after the Google IP-policy incident but the history is deep.",
+      "lastTouch": "2026-04-14 (catch-up; project paused)"
+    }
+  },
+  {
+    "id": "ashish-kumar-keemakr",
+    "name": "Ashish Kumar",
+    "qualityTier": "tag-only",
+    "brings": [],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Single screening-coordination touch as a candidate routed to FSZT; Keemakr.ai affiliation only tentative.",
+      "lastTouch": "2026-06-06"
+    }
+  },
+  {
+    "id": "atif-bhive-crack",
+    "name": "Atif Hossain",
+    "qualityTier": "tag-only",
+    "brings": [],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Known via BHIVE; one captured recruitment-intro event (Atif↔Trupeer.ai). Relationship section is a placeholder.",
+      "lastTouch": "2026-03-15"
+    }
+  },
+  {
+    "id": "bhavesh-bhaiya",
+    "name": "Bhavesh Suwalka",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "judgment",
+        "claim": "Experienced engineer Ajay uses as a trusted technical sounding-board",
+        "evidence": "Ran a dedicated Net Intel technical-consult session (2025-11-06); described as an experienced engineer Ajay consults for tech."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Brother-like family friend (distant cousin) Ajay genuinely trusts for engineering input; long-standing personal + advisory relationship.",
+      "lastTouch": "2026-05-12 (WhatsApp)"
+    }
+  },
+  {
+    "id": "chandana-keerthi",
+    "name": "Chandana Keerthi",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Senior UI/UX designer (4+ yrs, 50+ brands) who can own branding end-to-end",
+        "evidence": "Net Intel design lead during the late-2025 website/branding phase, with full branding delegated to her; founded a mock-interview startup that sold and appeared on Shark Tank."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Need a designer to own brand/website from zero",
+        "situationPattern": "A founder needs a senior designer to take a rough company narrative and produce brand + site",
+        "whyThisPerson": "Already did exactly this for Net Intel — took the 'company bible' and built the brand/site",
+        "evidence": "2025-11-11 website-design kickoff; branding decisions delegated to her."
+      }
+    ],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Real concentrated working engagement as design lead (Nov-2025 sprint, 58-message burst); professional and substantive.",
+      "lastTouch": "2025-11-11"
+    }
+  },
+  {
+    "id": "chiranjeet-mishra",
+    "name": "Chiranjeet Mishra",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "AI engineer focused on eval/retrieval and data-layering pipelines",
+        "evidence": "IIT-KGP; built a personal agent system and music-generation system; worked Net Intel's Bronze/Silver/Gold layering and evidence-scoring (May 2026 1:1s + team sessions)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Former team member with several substantive 1:1s; paused 2026-05-29 due to illness (not the work), with a feedback call planned — a real but recently-ended working tie.",
+      "lastTouch": "2026-05-29"
+    }
+  },
+  {
+    "id": "darshan-tank",
+    "name": "Darshan Tank",
+    "qualityTier": "tag-only",
+    "brings": [],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Onboarded to the MAI project (Jan 2026) with a couple of syncs; Relationship section is a placeholder, little deeper context.",
+      "lastTouch": "2026-05-20"
+    }
+  },
+  {
+    "id": "dawar-j-deka",
+    "name": "Dawar J Deka",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "conviction"
+    ],
+    "brings": [
+      {
+        "kind": "lived_experience",
+        "claim": "Building a 'hyperpersonalised digital twins' recruiter product (A2A-adjacent)",
+        "evidence": "IITB undergrad founder, ~3 months in; charges companies, plans to charge users for career guidance; relocated Mumbai→Bangalore (2026-03-14 jam)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Community-mediated (Ajay's junior in his AI Community); one extended product jam and light moderation since. Ajay states he doesn't know him personally.",
+      "lastTouch": "2026-04-15"
+    }
+  },
+  {
+    "id": "devendra-agrawal",
+    "name": "Devendra Agrawal",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "distribution"
+    ],
+    "brings": [
+      {
+        "kind": "network",
+        "claim": "Super-connector with ~18,000 contacts who brokers high-context intros across investors, founders and operators",
+        "evidence": "Yash Garg (his Founder's Office) confirmed the 18,000-contact phone book and that intro requests fan out through Devendra daily via WhatsApp groups (2026-03-23 Dexter call)."
+      },
+      {
+        "kind": "resource",
+        "claim": "Founder of Dexter Capital Advisors — can route to strategic capital and into specific industries",
+        "evidence": "Runs Dexter Capital Advisors; his demo queries included 'who in my network can introduce me to people in construction tech' (2026-03-23), i.e. real cross-industry distribution reach."
+      },
+      {
+        "kind": "judgment",
+        "claim": "Validated the super-connector problem from the inside",
+        "evidence": "On 2026-03-22 he confirmed 'tribal knowledge exists only in people's heads; a database alone cannot capture mental-map signals' and committed as Net Intel's first design partner."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Founder needs doors opened to capital + cross-industry distribution",
+        "situationPattern": "A founder closing a round needs warm routing to strategic investors and into specific industries (retail, brands, construction-tech) rather than just a check",
+        "whyThisPerson": "He IS the canonical super-connector — 18k contacts, a capital-advisory firm, and an operating model built entirely around fanning out high-context introductions",
+        "evidence": "Dexter Founder's Office runs intro requests through WhatsApp groups; fielded a construction-tech intro query and rejected Clay/Affinity as inadequate (2026-03-23)."
+      }
+    ],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Net Intel's first design partner: validated the thesis on a direct product call and the relationship continues through his Founder's Office. A real, problem-validated working relationship a few months old and partly mediated by Yash — honestly warm, not a years-deep strong tie.",
+      "lastTouch": "2026-03-23 (Dexter call; ongoing pipeline build)"
+    }
+  },
+  {
+    "id": "devki-nandan",
+    "name": "Devki Nandan",
+    "qualityTier": "tag-only",
+    "brings": [],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Surfaced in one Trupeer.ai recruitment-bridge call; Relationship section is a placeholder, no ongoing tie.",
+      "lastTouch": "2026-03-22"
+    }
+  },
+  {
+    "id": "dhruv-diddi",
+    "name": "Dhruv Diddi",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "network",
+        "claim": "Plugged into the Bangalore robotics/hardware builder community (Solo Tech)",
+        "evidence": "Associated with Solo Tech (getsolo.tech); recurring member of Ajay's 'Bangalore Sync' builder meets and the Robotics Gym crowd (Nov–Dec 2025)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Community/event overlap in the Bangalore maker scene; no deep 1:1 captured.",
+      "lastTouch": "2026-04-06"
+    }
+  },
+  {
+    "id": "dhruv-trehan",
+    "name": "Dhruv Trehan",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "conviction"
+    ],
+    "brings": [
+      {
+        "kind": "judgment",
+        "claim": "Works at the intersection of social sciences and technology (LossFunk research community)",
+        "evidence": "Surfaced via his social-sciences comments in a LossFunk AutoResearch session; bridged to Ajay by Nishit (2026-05-21)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One warm outreach + a single positive reply; Ajay still owes him a live link (open commitment). A nascent, not-yet-real relationship.",
+      "lastTouch": "2026-05-24"
+    }
+  },
+  {
+    "id": "dinesh-goel",
+    "name": "Dinesh Goel",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Deep WhatsApp-messaging-infrastructure expertise (Robylon.ai)",
+        "evidence": "Gave Net Intel its canonical WhatsApp-template strategy (Utility ₹12 vs Marketing ₹75 classification, account warmup, Meta restrictions) on 2026-01-30; IITB alum."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Need WhatsApp deliverability / template-classification help",
+        "situationPattern": "A team building on WhatsApp Business hits template-classification, warmup, or deliverability problems",
+        "whyThisPerson": "He authored the exact playbook Net Intel ran on; this is his company's domain",
+        "evidence": "2026-01-30 advisory walking Ajay + Arya through warmup + utility-vs-marketing strategy."
+      }
+    ],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Real advisory relationship — gave canonical guidance and committed to test the platform over a weekend; substantive though not deeply personal.",
+      "lastTouch": "2026-04-01 (WhatsApp)"
+    }
+  },
+  {
+    "id": "disha-suwalka",
+    "name": "Disha Suwalka",
+    "qualityTier": "tag-only",
+    "brings": [],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Family cousin (CA, Mumbai); a family tie with no captured professional interaction or direct contact.",
+      "lastTouch": "n/a (referenced via family, 2026-05-28)"
+    }
+  },
+  {
+    "id": "elle-london",
+    "name": "Elle (London)",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "conviction"
+    ],
+    "brings": [
+      {
+        "kind": "judgment",
+        "claim": "Computational-social-science / NLP-bias research perspective",
+        "evidence": "London PhD in NLP (fairness, bias, preference learning); was the earliest external comp-sociology framing voice in Net Intel's arc (2025-08-18)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One deep exploratory session; a single-occurrence research voice, no ongoing relationship.",
+      "lastTouch": "2025-08-18"
+    }
+  },
+  {
+    "id": "gaurav-singh",
+    "name": "Gaurav Singh",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "network",
+        "claim": "Acts as a network bridge — brought Ajay into MillionAI",
+        "evidence": "Introduced Ajay to the MillionAI team and consulted MAI on technology early; was Arbaz Shaikh's former manager."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Real connector relationship with recurring presence on MAI standups (Jul–Aug 2025); the edge that opened the MAI engagement.",
+      "lastTouch": "2025-08-29 (MAI all-team)"
+    }
+  },
+  {
+    "id": "gautam-kapur",
+    "name": "Gautam Kapur",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "conviction"
+    ],
+    "brings": [
+      {
+        "kind": "judgment",
+        "claim": "VC-scout pattern-matching on founders, plus product-positioning and fundraising mechanics",
+        "evidence": "Gave Net Intel the 'cookie vs tracker' naming frame and the missing-killer-use-case critique, plus angel-round structure/valuation-cap guidance (2026-01-14)."
+      },
+      {
+        "kind": "network",
+        "claim": "Actively sources and introduces founders ('finds founders before anybody's talking to them')",
+        "evidence": "Introduced Ajay to Abhishek Vyas via LinkedIn after ~20 conversations; named as one of three active Net Intel priority users (2026-01-16, 2026-02-03)."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Need fundraising-mechanics + positioning judgment before a raise",
+        "situationPattern": "A founder is about to raise and needs hard guidance on naming, killer use-case, round structure and close-window discipline",
+        "whyThisPerson": "He coached Ajay through exactly this and thinks like a scout who sees many rounds",
+        "evidence": "2026-01-14 session: angel-round CCD/CCPS structure, valuation cap/floor, Feb–March close-window discipline."
+      }
+    ],
+    "trustEdge": {
+      "band": "strong",
+      "rationale": "Trusted strategic advisor and Vipassana-debrief confidant who actively makes founder intros for Ajay; a genuine, personal, multi-touch relationship.",
+      "lastTouch": "2026-03-24 (WhatsApp)"
+    }
+  },
+  {
+    "id": "harsh-meerut",
+    "name": "Harsh (Meerut)",
+    "qualityTier": "tag-only",
+    "brings": [],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Interviewed for a Net Intel intern role and was declined (favoring Jatin); a dormant, gracious-decline relationship.",
+      "lastTouch": "2025-11-23"
+    }
+  },
+  {
+    "id": "harshita-jain",
+    "name": "Harshita Jain",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "resource",
+        "claim": "Dev-rel POC at Smallest AI who can grant credits and program access",
+        "evidence": "Onboarded Net Intel into Smallest AI's dev-rel program with a $10K credit grant and serves as Ajay's POC for 6 months (2026-04-21)."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Need voice-AI credits / dev-rel program access",
+        "situationPattern": "A team needs voice-stack credits or a dev-rel relationship at Smallest AI",
+        "whyThisPerson": "She is the named POC who already granted Net Intel credits and program access",
+        "evidence": "2026-04-21 acceptance into the program with a $10K grant."
+      }
+    ],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Real ongoing vendor/partner relationship with a concrete grant and a 6-month POC commitment; substantive but professional.",
+      "lastTouch": "2026-04-21"
+    }
+  },
+  {
+    "id": "ishaan-boardy",
+    "name": "Ishaan",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "conviction"
+    ],
+    "brings": [
+      {
+        "kind": "lived_experience",
+        "claim": "Got a novel AI-agent category funded by a top-tier US seed fund",
+        "evidence": "Founder of ChatOverflow ('Stack Overflow for AI agents'); raised pre-seed from a16z, chosen over Pear VC and Afore Capital (2026-04-29)."
+      },
+      {
+        "kind": "judgment",
+        "claim": "Sharp US-seed fundraising tactics",
+        "evidence": "Coached Ajay that '1 enterprise client = 5,000 consumer users in VC eyes' and on using competing term sheets to accelerate YC (2026-04-29)."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Founder raising a US seed in a novel category",
+        "situationPattern": "A founder needs tactics and warm proximity to top US seed funds for a hard-to-box category",
+        "whyThisPerson": "Just did this with a16z and freely shares the playbook with Ajay",
+        "evidence": "a16z pre-seed close + competing-offers tactic (2026-04-29)."
+      }
+    ],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Connected through Ajay's AI community with multiple catch-ups since Sep 2025 and candid tactical exchange; a real, recurring relationship.",
+      "lastTouch": "2026-04-29"
+    }
+  },
+  {
+    "id": "jatin-prakash",
+    "name": "Jatin Prakash",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Full-stack AI developer (frontend + intent→SQL + onboarding pipeline)",
+        "evidence": "Was Net Intel's Full Stack AI Developer (Nov 2025–Mar 2026); owned frontend, the conversational inquiry system, re-ranking and data-onboarding."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Former intern who departed in good standing (mutual, non-performance) with Ajay offering references and UPSC-prep help; a real, positive employment history.",
+      "lastTouch": "2026-03-17 (last working day)"
+    }
+  },
+  {
+    "id": "kartik-dalal",
+    "name": "Kartik Dalal",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "conviction"
+    ],
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Deep applied-AI product experience (8 yrs Amazon: Lex, Q, AI-for-manufacturing)",
+        "evidence": "IITB 2011; built Lex (conversational AI) and Q (coding assistant) at Amazon; now founder of Fulkrum.ai on RL environments / physical AI (2026-05-20)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Met on one 3-way intro call (with Owais) exploring a data-pipeline fit; an early IITB-network contact, not yet a working relationship.",
+      "lastTouch": "2026-05-20"
+    }
+  },
+  {
+    "id": "kashvi-gupta",
+    "name": "Kashvi Gupta",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "judgment",
+        "claim": "Rigorous UX-research methodology (ICPs, behavior-pattern interviews)",
+        "evidence": "Advised Ajay to define 10 ICPs and run immersive behavior-vs-stated-preference interviews; offered a UX researcher (Ragini) (2025-10-30)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One early user-research advisory session (introduced via 'Anuj'); a single substantive touch.",
+      "lastTouch": "2026-03-20 (WhatsApp)"
+    }
+  },
+  {
+    "id": "krish-bajaj",
+    "name": "Krish Bajaj",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "resource",
+        "claim": "On the tech team at DeVC — a route into a VC collective's reference-check workflow",
+        "evidence": "Builds DeVC's internal 'Zen' agent; surfaced DeVC's manual background-reference-check pain as a Net Intel pilot opportunity (2026-04-08)."
+      },
+      {
+        "kind": "lived_experience",
+        "claim": "Ex-insuretech founder (acquired) and ex-Deutsche Bank risk",
+        "evidence": "Founded an insuretech startup acquired in 2020; 2 years at Deutsche Bank on non-financial risk (2026-04-08 intro)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One deep working session on DeVC's BRC problem (Ajay brought Arbaz along); a promising but single-touch relationship.",
+      "lastTouch": "2026-04-08"
+    }
+  },
+  {
+    "id": "lalita-patidar",
+    "name": "Lalita Patidar",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "network",
+        "claim": "Runs Google internal referrals and is a two-way candidate-referral partner",
+        "evidence": "Refers candidates into Ajay's network (e.g. Sunil Patidar for a Maya Research SE role) and routes candidates through her Google referral pipeline (e.g. 'Punit bhai')."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Need a Google referral or a warm candidate exchange",
+        "situationPattern": "Someone needs an internal Google referral or to swap candidates with a reliable partner",
+        "whyThisPerson": "She actively runs Google referrals and has a repeated reciprocal-referral track record with Ajay",
+        "evidence": "Google 30-day/3-roles referral mechanic used for Ajay's network; Sunil-Patidar referral into Ajay's pipeline."
+      }
+    ],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Genuine reciprocal-referral friendship ('patidar sahiba'/'suwalka saab') with a real two-way track record; 62-message thread Aug 2025–Jan 2026.",
+      "lastTouch": "2026-01 (new-year exchange)"
+    }
+  },
+  {
+    "id": "lofty-khanna",
+    "name": "Lofty Khanna",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Senior engineering leader / Technical Architect at PhysicsWallah",
+        "evidence": "Technical Architect at PhysicsWallah (CTC ~83+2 LPA + 40-45L ESOPs) seeking senior-leadership roles (2026-06-06 screening)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Single recruitment screening-handoff (referred via Shibu, passed to FSZT); no working relationship with Ajay.",
+      "lastTouch": "2026-06-06"
+    }
+  },
+  {
+    "id": "luke-sequeira",
+    "name": "Luke Sequeira",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "judgment",
+        "claim": "Sharp product/GTM critique pushing toward higher-transaction-value use cases",
+        "evidence": "Gave Ajay a high-value Net Intel critique on monetization, the data-sharing asymmetry, and the 'surveillance-y' name (2026-04-28)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One strategic-advisory session (CalmLeap); Relationship section is a placeholder, no ongoing history.",
+      "lastTouch": "2026-04-28"
+    }
+  },
+  {
+    "id": "mohan-neuralzome",
+    "name": "Mohan",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "lived_experience",
+        "claim": "Founder of a Bangalore robotics company (Neuralzome)",
+        "evidence": "Founder of Neuralzome; part of the team Ajay and Dhruv Diddi assembled for Bangalore robotics events; Ajay visited Neuralzome (2025-11-17)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Recurring robotics-event collaborator in Ajay's builder circle with an in-person Neuralzome visit; a real but lightly-personal working tie.",
+      "lastTouch": "2025-12-14 (Bangalore Sync)"
+    }
+  },
+  {
+    "id": "mredul-sarda",
+    "name": "Mredul Sarda",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "judgment",
+        "claim": "Early-stage strategy, business-model and fundraising-path sounding-board",
+        "evidence": "Multi-session Net Intel strategy partner (Jul–Oct 2025) on positioning, unit economics, knowledge-graph architecture, and pre-seed-vs-angel strategy."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "One of Ajay's earliest strategy sounding-boards across many sessions, in regular contact through 2026 (calls him 'Suwalka'); a real, sustained relationship.",
+      "lastTouch": "2026-03 (WhatsApp threads)"
+    }
+  },
+  {
+    "id": "mridul-joshi",
+    "name": "Mridul Joshi",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "resource",
+        "claim": "GP of Riceberg Ventures — writes $100-400K deep-tech pre-seed/seed checks",
+        "evidence": "Runs Riceberg ($20M deep-tech fund, $100-400K checks, 8 investments); IITB '11, ex-Slice UPI lead (2025-07-26)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One captured VC-perspective session (Jul 2025) plus sporadic WhatsApp; the relationship substance is thin and dormant.",
+      "lastTouch": "2026-04 (WhatsApp threads)"
+    }
+  },
+  {
+    "id": "natasha-malpani",
+    "name": "Natasha Malpani",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "resource",
+        "claim": "Partner at Boundless Ventures with deep family-office + fintech access",
+        "evidence": "Partner at Boundless ($30M AI/frontier fund); connected to India's 6th largest family office (NBFCs/trading) with fintech first-degree network (2026-05-14)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One direct thesis call (briefed beforehand by Shubham Rai); may participate in a future round but the relationship is new and single-touch.",
+      "lastTouch": "2026-05-14"
+    }
+  },
+  {
+    "id": "nilesh-sparrow-vc",
+    "name": "Nilesh",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "resource",
+        "claim": "Early-stage investor at Sparrow VC",
+        "evidence": "Investor at Sparrow VC, IIT Delhi '22, ex-Scapia; the earliest captured Net Intel VC-pitch recipient (2026-02-25)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Single pitch session; engaged with the thesis and asked for a follow-up near MVP, but no working relationship yet.",
+      "lastTouch": "2026-02-25"
+    }
+  },
+  {
+    "id": "nimrod-vromen",
+    "name": "Nimrod Vromen",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "conviction"
+    ],
+    "brings": [
+      {
+        "kind": "lived_experience",
+        "claim": "Building a genuinely novel human-extension AI-replica category (Ark Empowerment)",
+        "evidence": "Founder/CEO of Ark Empowerment (Tel Aviv) building expert-taught AI replicas; ex-lawyer; author of 'Prompting Happiness' (2026-01-31)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One partnership-exploration session with an agreement to be a beta user; a single-touch, not-yet-developed relationship.",
+      "lastTouch": "2026-01-31"
+    }
+  },
+  {
+    "id": "nirant-k",
+    "name": "Nirant K",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "AI-systems observability expertise (Scale Focus)",
+        "evidence": "Gave Net Intel its canonical observability-stack guidance (OpenTelemetry, ClickHouse/LangSmith at scale, real-time logging) on 2026-03-16."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One advisory consultation; a Gen-AI-community-admin contact whose captured relationship is a single session.",
+      "lastTouch": "2026-03-16"
+    }
+  },
+  {
+    "id": "nithish-crustdata",
+    "name": "Nithish",
+    "qualityTier": "tag-only",
+    "brings": [],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Crustdata contact tied to the YC-hackathon/ContextCon orbit; Relationship section is a placeholder.",
+      "lastTouch": "2026-04-21"
+    }
+  },
+  {
+    "id": "nitin-borwankar",
+    "name": "Nitin Borwankar",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "conviction"
+    ],
+    "brings": [
+      {
+        "kind": "judgment",
+        "claim": "Senior architecture, data-systems and fundraising-strategy guidance",
+        "evidence": "Drove Net Intel's PostgreSQL/PG-Vector + Bronze/Silver/Gold + Tier-1/2 architecture, the canonical taglines, and angel-round/IIT-alumni growth strategy (2026-01-13, 2026-02-24)."
+      },
+      {
+        "kind": "network",
+        "claim": "Deep IIT Bombay '80s network with high-signal intro paths",
+        "evidence": "Offered an intro path to Nandan Nilekani via Amrit Harkani (IITB '81) and suggested angel referrals (e.g. O Malik) (2026-02-24)."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Need senior architecture review or a high-signal strategic/investor intro",
+        "situationPattern": "A founder needs veteran data-systems architecture review or a warm path to a marquee strategic contact",
+        "whyThisPerson": "He's been Net Intel's most senior advisor and has the IITB-'80s network to broker rare intros",
+        "evidence": "Architecture deep-dives + the Nandan-Nilekani-via-Amrit-Harkani intro path (2026-02-24)."
+      }
+    ],
+    "trustEdge": {
+      "band": "strong",
+      "rationale": "Net Intel's most senior advisor / near-cofounder figure since Oct 2025 with an ongoing team-meeting cadence and personal trust; a deep relationship.",
+      "lastTouch": "2026-05-22 (team meeting)"
+    }
+  },
+  {
+    "id": "nivedit-jain",
+    "name": "Nivedit Jain",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "lived_experience",
+        "claim": "Building agent-reliability tooling (FailProof AI / Exosphere)",
+        "evidence": "Founder of FailProof AI — programmable LLM/agent hooks (open-source CLI + enterprise policies), SF-based, organizing hackathons (2026-04-20)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One two-way founder intro/catch-up with a potential hackathon collaboration; a single-touch peer relationship.",
+      "lastTouch": "2026-04-20"
+    }
+  },
+  {
+    "id": "owais-chunawala",
+    "name": "Owais Chunawala",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "conviction"
+    ],
+    "brings": [
+      {
+        "kind": "lived_experience",
+        "claim": "Took a misread hard-tech category (AI robots for manufacturing) to marquee enterprise validation while bootstrapped",
+        "evidence": "Co-founder/CEO of Augle.ai (started at IIT 2018); customers include Bajaj, Tata Motors, Mahindra; 200-300 factory egocentric-data pipeline; bootstrapped, now raising (2026-05-20)."
+      },
+      {
+        "kind": "network",
+        "claim": "Direct manufacturer/factory access (textile, automotive)",
+        "evidence": "Surfaced a Bangalore textile/garment data-collection opportunity with 40+ years of senior manufacturing contacts (2026-04-16)."
+      },
+      {
+        "kind": "judgment",
+        "claim": "Category conviction for physical-AI / hard-tech founders",
+        "evidence": "Navigated a category most software investors misread and validated it via enterprise customers before raising (2026-05-20)."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Founder in a misread / hard-tech category needs validation conviction",
+        "situationPattern": "A deep-tech or physical-AI founder is fundraising into a category investors don't have a box for and needs someone who has proven it can be validated and sold",
+        "whyThisPerson": "He bootstrapped exactly such a category to Bajaj/Tata/Mahindra before raising — lived proof, not theory, plus real manufacturer doors",
+        "evidence": "Augle's marquee enterprise customers + bootstrapped-then-raising arc (2026-05-20); manufacturer-data partnership thread (2026-04-16)."
+      }
+    ],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "IITB-network relationship with recurring catch-ups and an active mutual-benefit collaboration (manufacturer data ↔ Ajay's processing/data-lake expertise); real working warmth, not a years-deep personal tie.",
+      "lastTouch": "2026-05-20"
+    }
+  },
+  {
+    "id": "piyush-product-highway",
+    "name": "Piyush",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "judgment",
+        "claim": "Data-architecture and search/retrieval advisory",
+        "evidence": "Advised Net Intel on Bronze/Silver/Gold layering, local-LLM WhatsApp processing, and a SQL-over-vector take (2026-02-19)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One external technical-advisor session; identity (surname/role) still tentative, no ongoing relationship.",
+      "lastTouch": "2026-02-19"
+    }
+  },
+  {
+    "id": "poobesh-gowtham",
+    "name": "Poobesh Gowtham",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Designer (IITB IDC) and prolific maker of shipped side-products",
+        "evidence": "3.5 yrs as an early Adaptive employee; built a Van Gogh color-palette generator (Product Hunt Product of the Day, 1M searches year one) and a personality-driven chess robot arm (2025-11-02)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One career-transition / design-collaboration exploration session; relocating to Bangalore but no working relationship yet.",
+      "lastTouch": "2025-11-02"
+    }
+  },
+  {
+    "id": "prateek-jogani",
+    "name": "Prateek Jogani",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "lived_experience",
+        "claim": "Third-time founder, ex-Qoala CTO ($100M ARR in South Asia)",
+        "evidence": "Previously CTO at Qoala which reached $100M ARR; now building 'Get You Done', an AI-first platform for product-dev teams (2025-10-02)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One founder-to-founder validation catch-up (introduced via Rajat Piplewar); a concentrated Oct-2025 exchange, not ongoing.",
+      "lastTouch": "2025-10-27 (end of WhatsApp burst)"
+    }
+  },
+  {
+    "id": "rahul-dzero",
+    "name": "Rahul",
+    "qualityTier": "tag-only",
+    "brings": [],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One pitch call that was cut short; identity (surname/role at Dzero VC) still tentative, no follow-up captured.",
+      "lastTouch": "2026-03-09"
+    }
+  },
+  {
+    "id": "rahul-taneja",
+    "name": "Rahul Taneja",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "resource",
+        "claim": "Partner at Lightspeed Venture Partners (board-level investor)",
+        "evidence": "Partner at Lightspeed; sits on Wheelocity's board as the Lightspeed nominee (confirmed 2026-06-11)."
+      },
+      {
+        "kind": "judgment",
+        "claim": "Shares Ajay's recruitment-gap and natural-connector thesis",
+        "evidence": "2026-05-05 catch-up: aligned on founders paying 50-60 LPA for quality and senior engineers bypassing marketplaces."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Long-standing relationship from Ajay's Wheelocity days (met during Rahul's board visits to the Trichy office); ongoing WhatsApp + catch-ups — real, if not weekly.",
+      "lastTouch": "2026-05-05"
+    }
+  },
+  {
+    "id": "rajveen-khandelwal",
+    "name": "Rajveen Khandelwal",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Runs technical recruitment (FSZT Partners) with a live candidate pipeline",
+        "evidence": "Founder at FSZT Partners; runs an active candidate pipeline with Ajay (lead-engineer, application/orchestration engineer, director-level edtech roles) through mid-2026."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Need to hire / source technical candidates",
+        "situationPattern": "A founder needs a recruiting partner who can source and screen senior technical candidates",
+        "whyThisPerson": "He already runs Ajay's live recruiting pipeline and co-screens candidates",
+        "evidence": "Ongoing FSZT pipeline collaboration (Shibu, Snehal, Lofty, Ashish; 2026-05 to 2026-06)."
+      }
+    ],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Active working recruiting partner (introduced via Shubham Rai) co-sourcing and screening candidates through mid-2026.",
+      "lastTouch": "2026-06-06"
+    }
+  },
+  {
+    "id": "rimpi-malik",
+    "name": "Rimpi Malik",
+    "qualityTier": "tag-only",
+    "brings": [],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Early Net Intel demo user; professional background not captured and Relationship section is thin.",
+      "lastTouch": "2026-03-25 (WhatsApp)"
+    }
+  },
+  {
+    "id": "sachin-sharma",
+    "name": "Sachin Sharma",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "distribution"
+    ],
+    "brings": [
+      {
+        "kind": "lived_experience",
+        "claim": "Scaled and exited a consumer marketplace (Townscript → BookMyShow)",
+        "evidence": "Cofounder of Townscript, an events-ticketing marketplace acquired by BookMyShow; now building in Marketing × Agents (Interleap)."
+      },
+      {
+        "kind": "judgment",
+        "claim": "Help-first networking and consumer-distribution playbook",
+        "evidence": "2026-04-30 1:1: articulated a 'good karma + vulnerability', help-first connection philosophy; collaborated on a mesh-networking-dinner product."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Founder needs consumer-marketplace / events distribution know-how",
+        "situationPattern": "A founder building a consumer or marketplace product needs someone who has scaled and exited one",
+        "whyThisPerson": "He actually built Townscript to an acquisition by BookMyShow — direct marketplace-distribution lived experience",
+        "evidence": "Townscript cofounder → BookMyShow acquisition (resolved 2026-06-06)."
+      }
+    ],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Active product-building collaborator with Ajay (mesh-networking-dinner) plus recurring 1:1s on networking products; a real working relationship.",
+      "lastTouch": "2026-04-30"
+    }
+  },
+  {
+    "id": "sahil-dhingra",
+    "name": "Sahil Dhingra",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "network",
+        "claim": "BFSI leader with credit-card-partnership and bank-marketplace reach",
+        "evidence": "Banking/BFSI leader on credit-card partnerships and bank-funded marketplace discounts (Amazon/Flipkart/SBI/HDFC); offered to connect Ajay with founders in his network (2026-02-27)."
+      },
+      {
+        "kind": "judgment",
+        "claim": "VC-savvy fundraising-readiness and timing guidance",
+        "evidence": "Gave Ajay early guidance on fundraising timing and investor-readiness (2025-10-07, 2025-12-10)."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Need BFSI / credit-card-partnership distribution or intros",
+        "situationPattern": "A founder needs to reach banks, BFSI partners, or credit-card/marketplace-discount channels",
+        "whyThisPerson": "He leads exactly this domain and explicitly offered to open his founder/BFSI network to Ajay",
+        "evidence": "BFSI credit-card-partnership role; offer to connect Ajay to relevant founders (2026-02-27)."
+      }
+    ],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Net Intel's first external beta user and a recurring advisor whose privacy concerns shaped the architecture; a real, sustained relationship from Oct 2025.",
+      "lastTouch": "2026-05-15 (Gotama/Epik prep)"
+    }
+  },
+  {
+    "id": "sarthak-kaul",
+    "name": "Sarthak Kaul",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "distribution"
+    ],
+    "brings": [
+      {
+        "kind": "network",
+        "claim": "High-velocity GTM/partnerships operator with global student-market and government reach",
+        "evidence": "Zero-to-one at TEDR/Tetr building the Teto Masters Program; hired 5 US interns in 3 days; runs government partnerships (Dubai-2035 credit system) across 40-50 countries (2026-03-14, 2026-04-04)."
+      },
+      {
+        "kind": "judgment",
+        "claim": "Media-and-business-convergence distribution thesis",
+        "evidence": "Argued the social-graph product needs a human/media face, citing the TBPN→OpenAI $100M+ acquisition on 55k subscribers (2026-04-04)."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Founder needs GTM/partnership distribution or a media-distribution wedge",
+        "situationPattern": "A founder needs help building distribution via partnerships, communities, or a media/creator face",
+        "whyThisPerson": "He runs exactly these partnership engines at TEDR and pressure-tested Ajay's distribution strategy directly",
+        "evidence": "TEDR partnership/immersion programs, network-velocity (5 interns in 3 days), and the media-distribution thesis (2026-04-04)."
+      }
+    ],
+    "trustEdge": {
+      "band": "strong",
+      "rationale": "Strategic peer and intellectual sparring partner; Ajay was the catalyst for Sarthak's return to India, with deep recurring conversations and active intro-trading.",
+      "lastTouch": "2026-04-04"
+    }
+  },
+  {
+    "id": "sasank-chilamkurthy",
+    "name": "Sasank Chilamkurthy",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "conviction"
+    ],
+    "brings": [
+      {
+        "kind": "lived_experience",
+        "claim": "Deep-tech founder actively getting a hard-tech thesis funded",
+        "evidence": "Well-known PyTorch contributor; raising a $2M round weighing competing term sheets (Crane/New India Fund vs Neon), with InfoEdge as a potential participant (2026-04-16)."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Founder weighing term sheets / raising a hard-tech round",
+        "situationPattern": "A deep-tech founder needs a peer who has navigated competing term sheets and hard-tech fundraising",
+        "whyThisPerson": "He's mid-raise with two term sheets and trusts Ajay enough to ask for a gut-check intro",
+        "evidence": "Asked Ajay for a warm intro to an unbiased senior founder for the Crane-vs-Neon decision (2026-04-16)."
+      }
+    ],
+    "trustEdge": {
+      "band": "strong",
+      "rationale": "IIT Bombay senior to Ajay with a long-running friendship; trusted enough to be brought into live fundraising decisions.",
+      "lastTouch": "2026-04-16"
+    }
+  },
+  {
+    "id": "satwik-elevation",
+    "name": "Satwik",
+    "qualityTier": "tag-only",
+    "brings": [],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Operational hackathon-coordination contact at Elevation Capital (credits/logistics); a foot in the door, not a relationship.",
+      "lastTouch": "2026-05-21"
+    }
+  },
+  {
+    "id": "shruti-jain",
+    "name": "Shruti Jain",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "resource",
+        "claim": "Principal at XeedVC — writes $500K-$2M early-stage checks with operator-LP support",
+        "evidence": "XeedVC manages $150M across two funds, 30+ portfolio companies, with 20+ Flipkart/Tata operator-LPs who mentor portfolio (2026-03-06)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Cold-reached Ajay for a deep thesis call and shares Rajasthan roots; the relationship is real enough that Ajay is actively routing Umang Chhaparia's Tru Commerce seed to her (2026-06-11).",
+      "lastTouch": "2026-06-11 (Umang intro routing)"
+    }
+  },
+  {
+    "id": "shubham-rai",
+    "name": "Shubham Rai",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "distribution"
+    ],
+    "brings": [
+      {
+        "kind": "network",
+        "claim": "Runs monthly Bangalore founder/investor meetups — a connector into GTM and investor circles",
+        "evidence": "Ex-Bharti Airtel; runs 'good people, no agenda' founder/investor meetups; a 'potential source for GTM-focused individuals' per Ajay (2025-10-17)."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Need warm routing into Bangalore founder/investor circles",
+        "situationPattern": "A founder needs introductions into a curated founder/investor community or GTM operators",
+        "whyThisPerson": "He runs exactly these meetups and has already brokered a concrete investor intro for Ajay",
+        "evidence": "Briefed Ajay on Natasha Malpani ahead of outreach and runs the monthly founder/investor meetup (2026-04-20, 2025-10-17)."
+      }
+    ],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Acts as a real network broker for Ajay (e.g. the Natasha Malpani / Boundless intro) and an early test user; substantive, though his FSZT affiliation is held tentatively.",
+      "lastTouch": "2026-04-20"
+    }
+  },
+  {
+    "id": "siddharth-manjrekar",
+    "name": "Siddharth Manjrekar",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "distribution"
+    ],
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Growth / revenue-ops / performance-marketing operator owning end-to-end PnL",
+        "evidence": "Chief of Staff (Growth & Rev-Ops) at Aevy owning marktech + end-to-end PnL, brought in to crack performance marketing; two-time ex-founder (Sally, Loopie) (2026-04-15)."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Founder needs growth / rev-ops / perf-marketing operating muscle",
+        "situationPattern": "An early-stage team needs a hands-on operator to own growth, marktech and PnL",
+        "whyThisPerson": "He's doing exactly this as CoS at Aevy and was hunting an early-operator role precisely for this muscle",
+        "evidence": "Aevy CoS Growth & Rev-Ops scope; reached out to Ajay for an early-operator role (2026-04-15)."
+      }
+    ],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Vouched for by mutual contact Koushal and traded concrete favors with Ajay (soft-boxes for a shoot ↔ a perf-marketing intro); a real, warm relationship.",
+      "lastTouch": "2026-05-29"
+    }
+  },
+  {
+    "id": "sidhant-panda",
+    "name": "Sidhant Panda",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "ML/AI engineer at Swiggy building matchmaking/networking products",
+        "evidence": "ML/AI at Swiggy; co-built a 'mesh networking dinner' matchmaking product with Ajay and Sachin Sharma and went deep on Net Intel architecture (2026-04-24/25)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Active product-building collaborator on networking/matchmaking ideas across multiple 2026 sessions.",
+      "lastTouch": "2026-04-25"
+    }
+  },
+  {
+    "id": "sobin-fszt",
+    "name": "Sobin",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Recruitment partner (FSZT) currently at Tailor.ai",
+        "evidence": "Member of FSZT Partners; co-conducts candidate screenings in Ajay's pipeline (Lofty Khanna, Ashish Kumar, Jun 2026); currently at Tailor.ai."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Operational recruiting-partner contact via FSZT; joined a couple of screenings, no deeper relationship captured.",
+      "lastTouch": "2026-06-06"
+    }
+  },
+  {
+    "id": "subhashis-banerjee",
+    "name": "Subhashis Banerjee",
+    "qualityTier": "tag-only",
+    "brings": [],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Bharat1 Fund contact met through event planning; Relationship section is a placeholder, role/check-writing not established.",
+      "lastTouch": "2026-04-25"
+    }
+  },
+  {
+    "id": "sudhanshu-sahil-mantys",
+    "name": "Sudhanshu",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "CTO of a YC company (Mantys) — IIT Bombay; scaling a founding eng team",
+        "evidence": "IITB alum, CTO of Mantys (joined Dec 2024); engaged Ajay to hire 3-4 founding engineers (10% of CTC fee, scoped 2026-03-26)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Active recruitment-client engagement with two-way deliverables (he sends requirements, Ajay sends candidates); a real working relationship reached via the Viren/Sahil network.",
+      "lastTouch": "2026-03-26"
+    }
+  },
+  {
+    "id": "suman-reddy",
+    "name": "Suman Reddy",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Senior consumer-product leader (Product Director @ Glance)",
+        "evidence": "Product Director at Glance; targeting Series-B consumer-product roles; gave Ajay network insights and a referral (Nikita Reddy at Uber) (2025-10-29)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One PM-candidate-debrief session through Ajay's recruitment work; a concentrated late-Oct-2025 exchange, not ongoing.",
+      "lastTouch": "2025-10-30"
+    }
+  },
+  {
+    "id": "sunil-patidar",
+    "name": "Sunil Patidar",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Software engineer with sharp product-scoping instincts",
+        "evidence": "Bangalore engineer who grilled Ajay's network-intel pitch on entity/query/persona definitions; evaluated as a tech-cofounder prospect (referred via Lalita Patidar, Sep 2025)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Engineer-to-engineer mutual respect through a tech-cofounder evaluation; a real relationship, now somewhat dormant (last in-window activity Feb 2026).",
+      "lastTouch": "2026-02-10"
+    }
+  },
+  {
+    "id": "suyash-vyas",
+    "name": "Suyash Vyas",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "distribution"
+    ],
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Runs a creative marketing agency (brand-ecosystem communication)",
+        "evidence": "Runs a creative marketing agency (relocated to Mumbai), focused on brand communication and customer acquisition for product builders (2026-03-09)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One peer phone catch-up (plagued by call drops); a thin, single-touch relationship.",
+      "lastTouch": "2026-03-09"
+    }
+  },
+  {
+    "id": "sydney-liu",
+    "name": "Sydney Liu",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "lived_experience",
+        "claim": "SF-based consumer-AI / creator-tools founder (CharacterHub)",
+        "evidence": "Founder of CharacterHub (Commaful lineage), SF; exchanged thesis with Ajay on weak-ties / computational sociology (2025-08-15)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One Boardy-connect thesis session; an early peer-founder touchpoint, no ongoing relationship.",
+      "lastTouch": "2025-08-15"
+    }
+  },
+  {
+    "id": "umang-chhaparia",
+    "name": "Umang Chhaparia",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "lived_experience",
+        "claim": "Co-founder of Tru Commerce (IITB), actively closing a seed round",
+        "evidence": "Co-founder of Tru Commerce with Viren Inaniyan; building MVPs (Deepgram + Smallest.ai) and closing Tru Commerce's seed (2026-05-07, 2026-06-11)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Long-time IITB/WhatsApp contact in active builder-to-builder collaboration (Ajay shares API keys/resources); Ajay is routing a XeedVC intro to him during the seed close.",
+      "lastTouch": "2026-06-11"
+    }
+  },
+  {
+    "id": "vaibhav-chowdhury",
+    "name": "Vaibhav Chowdhury",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "resource",
+        "claim": "VP at Elevation Capital (consumer-tech) — route to a partner-level conversation",
+        "evidence": "VP at Elevation (3 yrs); led the Elevation side of a Net Intel pitch and committed to product testing + a Principal/Partner Mukul follow-up if the team got excited (2026-04-16)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One pitch meeting; a live but single-touch institutional-VC relationship with an open follow-up.",
+      "lastTouch": "2026-04-16"
+    }
+  },
+  {
+    "id": "venkata-pingali",
+    "name": "Venkata Pingali",
+    "qualityTier": "tag-only",
+    "brings": [],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Founder of Scribble; a platform-walkthrough as a potential user with tentative session attribution and a long but low-substance WhatsApp thread.",
+      "lastTouch": "2026-02-12"
+    }
+  },
+  {
+    "id": "vineet-chaturvedi",
+    "name": "Vineet Chaturvedi",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "lived_experience",
+        "claim": "Founder of MillionAI (MAI), an AI agent marketplace (UAE-based)",
+        "evidence": "Founder of MAI; the client whose project Ajay's 3-way partnership built (2025-2026), with onboarding 1:1s in Jan 2026."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Real client-engagement relationship through the MAI project that Ajay's partnership delivered; substantive though the page-level detail is thin.",
+      "lastTouch": "2026-05-06 (WhatsApp)"
+    }
+  },
+  {
+    "id": "yash-garg",
+    "name": "Yash Garg",
+    "qualityTier": "enriched",
+    "axisPrefilter": [
+      "distribution"
+    ],
+    "brings": [
+      {
+        "kind": "network",
+        "claim": "Operational access to Dexter's super-connector network (Founder's Office)",
+        "evidence": "Founder's Office at Dexter Capital Advisors; handles tech + intro facilitation for Devendra Agrawal (the 18k-contact super-connector); the Net Intel × Dexter POC owner (2026-03-23)."
+      }
+    ],
+    "triggerSurfaces": [
+      {
+        "label": "Need operational access into a super-connector's intro machine",
+        "situationPattern": "A founder wants their request actually executed through a high-volume connector's pipeline, not just promised",
+        "whyThisPerson": "He is the person who operationally runs Devendra's intro facilitation day-to-day",
+        "evidence": "Owns the Dexter intro/facilitation workflow and the Net Intel design-partner relationship (2026-03-23)."
+      }
+    ],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Primary POC for the Net Intel × Dexter design-partner engagement; a real, active working relationship from the Mar-2026 genesis call onward.",
+      "lastTouch": "2026-03-23 (+ ongoing pipeline build)"
+    }
+  },
+  {
+    "id": "yash-gupta",
+    "name": "Yash Gupta",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Senior engineering leader (CTO @ Nova Benefits, IIT Delhi CSE '17)",
+        "evidence": "CTO at Nova Benefits; read Ajay's Net Intel thesis early and expressed interest in his next challenge (2025-10-17 name-drop; 2025-11-26 1:1)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One 1:1 plus a thesis-driven name-drop; a real senior profile but a thin direct relationship.",
+      "lastTouch": "2026-05-14 (WhatsApp)"
+    }
+  },
+  {
+    "id": "zayan-iitb",
+    "name": "Zayan",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "lived_experience",
+        "claim": "Co-founder of an early-stage edtech (ZAPS, 'structured Reddit for career decisions')",
+        "evidence": "Second-year IITB undergrad; 4-cofounder ZAPS funded by a ₹30k IITB-Groww PoC grant; ~100 students in pilot, targeting 200 (2026-05-01)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "Introduced via Sandeep Sirodia seeking reviewers; Ajay coached him and gave community access — a one-directional mentorship, not yet a two-way relationship.",
+      "lastTouch": "2026-05-14"
+    }
+  },
+  {
+    "id": "zeal-sheth",
+    "name": "Zeal Sheth",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "UX/Product designer with a VLSI/semiconductor engineering background (US-based)",
+        "evidence": "Electronic engineer → VLSI Masters → Intel/Navic → UX/Product design; beta-tested at Events.AI; pressure-tested Ajay's Net Intel pitch (2025-09-29)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "One product-strategy session as a sharp early critic; a concentrated Sep-Oct 2025 exchange, no ongoing relationship.",
+      "lastTouch": "2025-10-02"
+    }
+  },
+  {
+    "id": "zeeshan-solotech",
+    "name": "Zeeshan",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "capability",
+        "claim": "Physical-AI / on-device ML practitioner (Solotech)",
+        "evidence": "At Solotech (getsolo.tech, on-device inference; first to run a VLM on a robot at CES); published a 1B-param medical model beating 70B models; presented at Ajay's AI-community SLM session (2025-08-27)."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "acquaintance",
+      "rationale": "AI-community speaker relationship plus recurring Bangalore builder-sync presence; real but lightweight.",
+      "lastTouch": "2025-12-28 (Bangalore Sync)"
+    }
+  },
+  {
+    "id": "ashray-malhotra",
+    "name": "Ashray Malhotra",
+    "qualityTier": "enriched",
+    "brings": [
+      {
+        "kind": "lived_experience",
+        "claim": "Founder of Rephrase.ai (generative-AI video), IITB",
+        "evidence": "Page identifies him as the Rephrase.ai founder (Google Contacts 'Ashray Malhotra IITB'); co-spoke with Anagh Prasad (Accel) at Ajay's AI-community event. NB: same-person-as-the-Rephrase.ai-founder is probable but flagged unconfirmed on his page."
+      },
+      {
+        "kind": "judgment",
+        "claim": "Early network-intelligence collaborator who explored the thesis with Ajay",
+        "evidence": "2025-12-23 Granola 'network intelligence system exploration with potential collaborator' session with Ajay."
+      }
+    ],
+    "triggerSurfaces": [],
+    "trustEdge": {
+      "band": "warm",
+      "rationale": "Real multi-touch relationship: a direct 2025-12-23 1:1 plus a same-day network-intelligence collaboration session, co-speaking at Ajay's AI-community event, and a 36-message thread Oct 2025–Jan 2026 (post-event WhatsApp cadence noted as not fully enriched).",
+      "lastTouch": "2026-01-03 (WhatsApp thread)"
+    }
+  }
+]
