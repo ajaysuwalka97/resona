@@ -1,14 +1,12 @@
 /**
- * E2E smoke test: verify that the prior 'Unknown realtime session error' is gone.
+ * E2E smoke test: verify "Unknown realtime session error" does not regress.
  *
  * Steps:
- *  1. Open app at http://localhost:5173
- *  2. Run realtime readiness check
- *  3. Load LinkedIn profile https://www.linkedin.com/in/umangc/
- *  4. Start Resona session
- *  5. Wait 20 s without speaking
- *  6. Check that NO red error panel appears
- *  7. Capture console / network errors
+ *  1. Open app and enter the self-serve flow
+ *  2. Load LinkedIn profile
+ *  3. Continue to mic primer and start session
+ *  4. Wait 20s without speaking
+ *  5. Confirm no Unknown realtime session error in console
  */
 
 import { test, expect, type Page } from "@playwright/test";
@@ -17,13 +15,18 @@ const LINKEDIN_URL = "https://www.linkedin.com/in/umangc/";
 const SILENT_WAIT_MS = 20_000;
 
 // Collect browser console errors so we can report them
-const consoleErrors: string[] = [];
-const networkErrors: { url: string; status: number }[] = [];
+let consoleErrors: string[] = [];
+let networkErrors: { url: string; status: number }[] = [];
+let profileLoadSucceeded = false;
 
 test.describe("Realtime session – error regression", () => {
   let page: Page;
 
   test.beforeAll(async ({ browser }) => {
+    consoleErrors = [];
+    networkErrors = [];
+    profileLoadSucceeded = false;
+
     const context = await browser.newContext({
       permissions: ["microphone"],
     });
@@ -47,27 +50,16 @@ test.describe("Realtime session – error regression", () => {
   test("Step 1 – App loads at http://localhost:5173", async () => {
     await page.goto("/");
     await expect(page).toHaveTitle(/resona|voice|demo/i, { timeout: 10_000 });
-    // Confirm the hero heading is present
-    await expect(page.locator("h1")).toBeVisible({ timeout: 5_000 });
+    await expect(
+      page.getByRole("button", { name: /start the demo/i }),
+    ).toBeVisible({ timeout: 5_000 });
     console.log("[PASS] Step 1: App loaded");
   });
 
-  test("Step 2 – Run realtime readiness check", async () => {
-    const preflightBtn = page.getByRole("button", {
-      name: /check realtime readiness/i,
-    });
-    await expect(preflightBtn).toBeVisible({ timeout: 5_000 });
-    await preflightBtn.click();
-
-    // Wait for the preflight status to resolve (either OK or a known error, not blank)
-    const preflightText = page.locator("article").filter({ hasText: /pre-flight/i }).locator("p").first();
-    await expect(preflightText).not.toHaveText("Not checked in app yet.", { timeout: 15_000 });
-
-    const statusText = await preflightText.textContent();
-    console.log(`[INFO] Preflight status: ${statusText}`);
-
-    // Accept both OK and expected token errors; what we do NOT accept is a generic crash
-    expect(statusText).toBeTruthy();
+  test("Step 2 – Enter self-serve flow", async () => {
+    await page.getByRole("button", { name: /start the demo/i }).click();
+    await expect(page.locator("#linkedin-url")).toBeVisible({ timeout: 5_000 });
+    console.log("[PASS] Step 2: Entered intake flow");
   });
 
   test("Step 3 – Load LinkedIn profile https://www.linkedin.com/in/umangc/", async () => {
@@ -77,60 +69,86 @@ test.describe("Realtime session – error regression", () => {
     await urlInput.fill(LINKEDIN_URL);
     await expect(urlInput).toHaveValue(LINKEDIN_URL);
 
-    const loadBtn = page.getByRole("button", { name: /load profile context/i });
+    const loadBtn = page.getByRole("button", { name: /load profile/i });
     await expect(loadBtn).toBeEnabled({ timeout: 3_000 });
     await loadBtn.click();
 
-    // Wait for the snapshot section or an error to appear
-    const snapshot = page.locator(".snapshot");
-    const errorPanel = page.locator(".error-panel");
+    // Wait for the identity card or an error recovery card to appear
+    const snapshot = page.locator(".identity-card");
+    const errorPanel = page.locator(".error-recovery");
 
-    await Promise.race([
-      expect(snapshot).toBeVisible({ timeout: 30_000 }),
-      expect(errorPanel).toBeVisible({ timeout: 30_000 }),
-    ]).catch(() => {
-      // both may timeout; that's fine – we just note what happened
-    });
+    let snapshotVisible = false;
+    let errorVisible = false;
 
-    const snapshotVisible = await snapshot.isVisible().catch(() => false);
-    const errorVisible = await errorPanel.isVisible().catch(() => false);
+    try {
+      await snapshot.waitFor({ state: "visible", timeout: 30_000 });
+      snapshotVisible = true;
+    } catch {
+      try {
+        await errorPanel.waitFor({ state: "visible", timeout: 5_000 });
+        errorVisible = true;
+      } catch {
+        // both may timeout; that's fine – we just note what happened
+      }
+    }
+
+    if (!snapshotVisible) {
+      errorVisible = errorVisible || (await errorPanel.isVisible().catch(() => false));
+    }
 
     if (snapshotVisible) {
-      const name = await snapshot.locator("strong").first().textContent();
+      profileLoadSucceeded = true;
+      const name = await snapshot.locator("h3").first().textContent();
       console.log(`[PASS] Step 3: Profile loaded – ${name}`);
     } else if (errorVisible) {
-      const errText = await errorPanel.locator("p").textContent();
+      profileLoadSucceeded = false;
+      const errText = await errorPanel
+        .locator(".microcopy")
+        .first()
+        .textContent()
+        .catch(async () => errorPanel.textContent());
       console.log(`[WARN] Step 3: Profile load error – ${errText}`);
       // If this is a backend/API issue, skip the remaining session steps
       test.skip(true, `Profile load failed: ${errText}`);
     } else {
+      profileLoadSucceeded = false;
       console.log("[WARN] Step 3: Neither snapshot nor error panel visible after 30 s");
     }
   });
 
-  test("Step 4 – Start Resona session", async () => {
-    const startBtn = page.getByRole("button", { name: /start resona session/i });
+  test("Step 4 – Continue to mic primer and start session", async () => {
+    test.skip(!profileLoadSucceeded, "Profile load failed in Step 3.");
+    const continueBtn = page.getByRole("button", { name: /continue to voice room/i });
+    await expect(continueBtn).toBeEnabled({ timeout: 5_000 });
+    await continueBtn.click();
+
+    const startBtn = page.getByRole("button", {
+      name: /allow and continue|retry connection/i,
+    });
     await expect(startBtn).toBeEnabled({ timeout: 5_000 });
     await startBtn.click();
 
-    // Give it up to 15 s to move into "connecting" or "connected"
-    const stateText = page.locator("section").filter({ hasText: /realtime voice wall/i }).locator("p").first();
-    await expect(stateText).not.toHaveText("idle", { timeout: 15_000 });
-
-    const state = await stateText.textContent();
-    console.log(`[INFO] Step 4: Session state after click – ${state}`);
+    await expect(page.getByRole("heading", { name: /talk to resona/i })).toBeVisible({
+      timeout: 15_000,
+    });
+    console.log("[INFO] Step 4: Voice room mounted");
   });
 
   test("Step 5 – Wait 20 s without speaking and check no error panel", async () => {
+    test.skip(!profileLoadSucceeded, "Profile load failed in Step 3.");
     // Wait without any interaction
     await page.waitForTimeout(SILENT_WAIT_MS);
 
     // Step 6: check for error panel
-    const errorPanel = page.locator(".error-panel");
+    const errorPanel = page.locator(".error-recovery");
     const hasError = await errorPanel.isVisible().catch(() => false);
 
     if (hasError) {
-      const errText = await errorPanel.locator("p").textContent();
+      const errText = await errorPanel
+        .locator(".microcopy")
+        .first()
+        .textContent()
+        .catch(async () => errorPanel.textContent());
       const isExpectedHeadlessLimitation =
         /not supported|notallowederror|getusermedia|webrtc/i.test(errText ?? "");
       if (isExpectedHeadlessLimitation) {

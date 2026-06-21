@@ -7,7 +7,9 @@
     "dev:client": "vite",
     "dev:server": "tsx watch server/index.ts",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:unit": "node --test --import tsx \"src/**/*.test.ts\"",
+    "eval:transcript": "tsx scripts/eval-transcript.ts"
   },
   "keywords": [],
   "author": "Ajay Suwalka <ajaysuwalka97@gmail.com>",

@@ -6,6 +6,14 @@ import {
 
 import { createFindMatchTool, type MatchMode } from "../tools/findMatch";
 import type { MatchResult } from "../types/match";
+import {
+  DEFAULT_STYLE_MEMORY,
+  isAmbiguousShortReply,
+  isIncompleteUtterance,
+  situationSummaryGroundedInUserSpeech,
+  styleMemoryPromptLine,
+  type StyleMemory,
+} from "./conversationHeuristics";
 import { buildResonaSystemPrompt } from "./resonaPrompt";
 
 type RealtimeTokenResponse = {
@@ -19,9 +27,11 @@ type RealtimeTokenResponse = {
 
 export type StartResonaSessionOptions = {
   apiBaseUrl: string;
+  apiAuthKey?: string;
   audioElement: HTMLAudioElement;
   matchMode: MatchMode;
   profileContext: SessionProfileContext;
+  styleMemory?: StyleMemory;
   onTranscriptDelta?: (delta: string) => void;
   onToolActivity?: (message: string) => void;
   onConversationItem?: (item: {
@@ -84,6 +94,14 @@ function normalizeAssistantDedupText(text: string): string {
     .trim();
 }
 
+function sanitizeKickoffValue(value: string): string {
+  return value
+    .replace(/[`$]/g, "")
+    .replace(/[<>{}]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function assessProfileContext(profile: SessionProfileContext): {
   quality: ContextQuality;
   notes: string[];
@@ -114,7 +132,10 @@ function assessProfileContext(profile: SessionProfileContext): {
 function buildWarmKickoffInstruction(
   profile: SessionProfileContext,
   contextQuality: ContextQuality,
+  styleMemory: StyleMemory,
 ): string {
+  const safeName = sanitizeKickoffValue(profile.name);
+  const safeCompany = sanitizeKickoffValue(profile.company);
   const calibrationLine =
     contextQuality === "partial"
       ? "Start with a calibration nudge before assumptions: ask what outcome they need most from this intro in the next two weeks."
@@ -122,12 +143,23 @@ function buildWarmKickoffInstruction(
 
   return [
     "Internal kickoff instruction:",
-    `Start the conversation now. Greet ${profile.name} warmly as a trusted connector.`,
+    `Start the conversation now. Greet ${safeName} warmly as a trusted connector.`,
     `Use context from ${profile.source} profile data and keep tone practical, supportive, and specific.`,
     "First-impression guardrail: in your first response, use at most 2 short sentences.",
-    `Sentence 1 should anchor who they are using name/company context ("${profile.name}" at "${profile.company}") and one short context clue only.`,
+    `Sentence 1 should anchor who they are using name/company context ("${safeName}" at "${safeCompany}") and one short context clue only.`,
+    "Do not use archetype/persona labels in the opener (for example: connector, operator, builder, momentum machine).",
+    "Do not infer personality traits or broad themes from profile text. Prefer literal context or a neutral greeting.",
     "Sentence 2 should ask exactly one focused nudge question.",
     "Do not recite LinkedIn details or list multiple past companies/credentials in the opener.",
+    ...(styleMemory.concise
+      ? ["Style preference memory: keep this opener concise."]
+      : []),
+    ...(styleMemory.direct
+      ? ["Style preference memory: keep this opener direct and low-fluff."]
+      : []),
+    ...(styleMemory.avoidProfileRecap
+      ? ["Style preference memory: avoid profile-recital phrasing."]
+      : []),
     calibrationLine,
     "Do not call any tools in this first response.",
   ].join(" ");
@@ -153,37 +185,12 @@ function isWarmKickoffText(text: string): boolean {
   return text.startsWith("Internal kickoff instruction:");
 }
 
-const constraintStopWords = new Set([
-  "about",
-  "across",
-  "after",
-  "also",
-  "and",
-  "another",
-  "because",
-  "find",
-  "for",
-  "from",
-  "help",
-  "just",
-  "match",
-  "more",
-  "need",
-  "one",
-  "same",
-  "second",
-  "someone",
-  "that",
-  "this",
-  "with",
-]);
-
 function tokenizeConstraint(text: string): string[] {
   return text
     .toLowerCase()
     .replace(/[^a-z0-9\s]/g, " ")
     .split(/\s+/)
-    .filter((token) => token.length > 2 && !constraintStopWords.has(token));
+    .filter((token) => token.length > 2);
 }
 
 function hasConstraintShift(
@@ -299,8 +306,10 @@ function createStageController() {
   let userTurnCount = 0;
   let firstMatchWordCount = 0;
   let firstMatchTurnCount = 0;
-  let firstMatchSituationSummary = "";
-  let firstMatchNeedDimension = "";
+  let latestUserUtterance = "";
+  let userUtterances: string[] = [];
+  let lastMatchSituationSummary = "";
+  let lastMatchNeedDimension = "";
   let pendingMatchNeedDimension = "";
   let successfulMatchCount = 0;
   let stage: ConversationStage = "probe1";
@@ -320,12 +329,12 @@ function createStageController() {
       return;
     }
 
-    if (userTurnCount >= 2 || transcriptWordCount >= 30) {
+    if (userTurnCount >= 3 && transcriptWordCount >= 18) {
       stage = "matchA";
       return;
     }
 
-    if (userTurnCount >= 1 || transcriptWordCount >= 8) {
+    if (userTurnCount >= 1 || transcriptWordCount >= 5) {
       stage = "probe2";
       return;
     }
@@ -342,6 +351,15 @@ function createStageController() {
       updateStage();
       return stage;
     },
+    observeUserUtterance(text: string) {
+      const normalized = text.trim();
+      if (normalized) {
+        latestUserUtterance = normalized;
+        if (!userUtterances.includes(normalized)) {
+          userUtterances.push(normalized);
+        }
+      }
+    },
     noteMatchAttempt(_situationSummary: string, needDimension?: string) {
       pendingMatchNeedDimension = needDimension?.trim() ?? "";
     },
@@ -355,17 +373,18 @@ function createStageController() {
       if (successfulMatchCount === 1) {
         firstMatchWordCount = transcriptWordCount;
         firstMatchTurnCount = userTurnCount;
-        firstMatchSituationSummary = result.situation_summary;
-        firstMatchNeedDimension = pendingMatchNeedDimension;
       }
+      lastMatchSituationSummary = result.situation_summary;
+      lastMatchNeedDimension = pendingMatchNeedDimension;
       updateStage();
     },
     canCallMatch(
       situationSummary: string,
       needDimension?: string,
+      replaceLastMatch?: boolean,
     ): StageGateResult {
       updateStage();
-      if (successfulMatchCount >= 2) {
+      if (successfulMatchCount >= 2 && !replaceLastMatch) {
         return {
           allowed: false,
           stage,
@@ -384,9 +403,62 @@ function createStageController() {
       }
 
       if (
-        successfulMatchCount === 1 &&
+        !replaceLastMatch &&
+        successfulMatchCount === 0 &&
+        userTurnCount < 3
+      ) {
+        return {
+          allowed: false,
+          stage,
+          reason:
+            "Need two clear answers from the founder before matching — ask one more focused question first.",
+        };
+      }
+
+      if (
+        !replaceLastMatch &&
+        successfulMatchCount === 0 &&
+        transcriptWordCount < 15
+      ) {
+        return {
+          allowed: false,
+          stage,
+          reason:
+            "Need a bit more detail in the founder's own words before searching the network.",
+        };
+      }
+
+      if (
+        !replaceLastMatch &&
+        (isAmbiguousShortReply(latestUserUtterance) ||
+          isIncompleteUtterance(latestUserUtterance))
+      ) {
+        return {
+          allowed: false,
+          stage,
+          reason:
+            "I caught that, but before matching I need one concrete detail so I do not guess the wrong constraint.",
+        };
+      }
+
+      if (
+        !replaceLastMatch &&
+        successfulMatchCount === 0 &&
+        !situationSummaryGroundedInUserSpeech(userUtterances, situationSummary)
+      ) {
+        return {
+          allowed: false,
+          stage,
+          reason:
+            "Summarize only what the founder actually said in this conversation — do not infer unstated needs from profile context.",
+        };
+      }
+
+      if (
+        !replaceLastMatch &&
+        successfulMatchCount >= 1 &&
         !hasConstraintShift(
-          `${firstMatchSituationSummary} ${firstMatchNeedDimension}`,
+          `${lastMatchSituationSummary} ${lastMatchNeedDimension}`,
           situationSummary,
           needDimension,
         )
@@ -402,11 +474,11 @@ function createStageController() {
       return {
         allowed: true,
         stage,
-        ...(successfulMatchCount === 1
+        ...(successfulMatchCount >= 1
           ? {
               carryoverContext: buildCarryoverContext(
-                firstMatchSituationSummary,
-                firstMatchNeedDimension,
+                lastMatchSituationSummary,
+                lastMatchNeedDimension,
                 situationSummary,
                 needDimension,
               ),
@@ -419,9 +491,15 @@ function createStageController() {
 
 async function mintRealtimeToken(
   apiBaseUrl: string,
+  apiAuthKey?: string,
 ): Promise<RealtimeTokenResponse> {
   const response = await fetch(`${apiBaseUrl}/api/realtime/session`, {
     method: "POST",
+    headers: apiAuthKey
+      ? {
+          "x-resona-api-key": apiAuthKey,
+        }
+      : undefined,
   });
 
   if (!response.ok) {
@@ -447,8 +525,9 @@ export async function startResonaSession(
   }
 
   const stageController = createStageController();
+  const styleMemory = options.styleMemory ?? DEFAULT_STYLE_MEMORY;
   const profileAssessment = assessProfileContext(options.profileContext);
-  const token = await mintRealtimeToken(options.apiBaseUrl);
+  const token = await mintRealtimeToken(options.apiBaseUrl, options.apiAuthKey);
 
   const findMatchTool = createFindMatchTool({
     mode: options.matchMode,
@@ -456,23 +535,34 @@ export async function startResonaSession(
       const gate = stageController.canCallMatch(
         input.situation_summary,
         input.need_dimension,
+        input.replace_last_match,
       );
       if (!gate.allowed) {
         options.onToolActivity?.(
           `Holding off for now (${gate.stage}). ${gate.reason ?? "Need one more user clarification."}`,
         );
-      } else {
-        if (gate.carryoverContext) {
-          input.situation_summary = gate.carryoverContext.situationSummary;
-          if (gate.carryoverContext.needDimension) {
-            input.need_dimension = gate.carryoverContext.needDimension;
-          }
-          options.onToolActivity?.(gate.carryoverContext.confirmationMessage);
-        }
-        stageController.noteMatchAttempt(
-          input.situation_summary,
-          input.need_dimension,
-        );
+        return gate;
+      }
+      const effectiveSituationSummary =
+        gate.carryoverContext?.situationSummary ?? input.situation_summary;
+      const effectiveNeedDimension =
+        gate.carryoverContext?.needDimension ?? input.need_dimension;
+      stageController.noteMatchAttempt(
+        effectiveSituationSummary,
+        effectiveNeedDimension,
+      );
+      if (gate.carryoverContext) {
+        options.onToolActivity?.(gate.carryoverContext.confirmationMessage);
+        return {
+          ...gate,
+          next_input: {
+            situation_summary: gate.carryoverContext.situationSummary,
+            ...(gate.carryoverContext.needDimension
+              ? { need_dimension: gate.carryoverContext.needDimension }
+              : {}),
+            ...(input.replace_last_match ? { replace_last_match: true } : {}),
+          },
+        };
       }
       return gate;
     },
@@ -491,6 +581,7 @@ export async function startResonaSession(
       raiseContext: options.profileContext.raise_context,
       profileSource: options.profileContext.source,
       contextQuality: profileAssessment.quality,
+      styleMemoryLine: styleMemoryPromptLine(styleMemory),
     }),
     tools: [findMatchTool],
   });
@@ -511,10 +602,10 @@ export async function startResonaSession(
           turnDetection: {
             type: "server_vad",
             createResponse: true,
-            interruptResponse: false,
-            threshold: 0.65,
-            silenceDurationMs: 700,
-            prefixPaddingMs: 280,
+            interruptResponse: true,
+            threshold: 0.55,
+            silenceDurationMs: 1300,
+            prefixPaddingMs: 300,
           },
         },
       },
@@ -626,6 +717,7 @@ export async function startResonaSession(
       return;
     }
 
+    stageController.observeUserUtterance(normalized);
     const currentWords = countWords(normalized);
     const previousWords = userWordCountByItemId.get(itemId) ?? 0;
     if (currentWords > previousWords) {
@@ -724,6 +816,7 @@ export async function startResonaSession(
           text: buildWarmKickoffInstruction(
             options.profileContext,
             profileAssessment.quality,
+            styleMemory,
           ),
         },
       ],

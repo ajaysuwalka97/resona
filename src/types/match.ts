@@ -65,4 +65,5 @@ export type MatchResult = {
   cap_status?: "open" | "reached";
   no_match_reason?: string;
   hard_cap_reached?: boolean;
+  replacement_of_candidate_id?: string;
 };

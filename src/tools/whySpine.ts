@@ -19,9 +19,12 @@ export function composeCandidateWhySpine(
     trigger: buildTriggerLine(candidate, triggerSurface, normalizedSummary),
     complementarity: buildComplementarityLine(candidate, topBrings),
     trust_bridge: buildTrustBridgeLine(candidate),
-    frame:
-      `Use this intro to unlock ${normalizedSummary} through concrete complementarity, not a generic contact.`,
+    frame: buildFrameLine(normalizedSummary, candidate.name),
   };
+}
+
+function buildFrameLine(normalizedSummary: string, candidateName: string): string {
+  return `Why this matters now: ${candidateName} can help advance ${normalizedSummary}.`;
 }
 
 function pickTopBrings(
@@ -45,10 +48,22 @@ function pickTriggerSurface(
 }
 
 function normalizeSummary(summary: string): string {
-  const trimmed = summary.trim().replace(/[.?!]+$/g, "").replace(/["“”]+/g, "'");
+  let trimmed = summary.trim().replace(/[.?!]+$/g, "").replace(/["“”]+/g, "'");
   if (!trimmed) {
     return "the immediate outcome and blocker";
   }
+
+  trimmed = trimmed
+    .replace(/^i have\b/i, "they have")
+    .replace(/^i'm\b/i, "they're")
+    .replace(/^i am\b/i, "they are")
+    .replace(/^i need\b/i, "they need")
+    .replace(/^i want\b/i, "they want")
+    .replace(/\bi\b/g, "they")
+    .replace(/\bmy\b/g, "their")
+    .replace(/\s+/g, " ")
+    .trim();
+
   return compactClause(trimmed, 92);
 }
 

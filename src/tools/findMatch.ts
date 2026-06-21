@@ -21,6 +21,9 @@ const findMatchInputSchema = z.object({
   need_dimension: z
     .string()
     .optional(),
+  replace_last_match: z
+    .boolean()
+    .optional(),
 });
 
 const llmScoreSchema = z.object({
@@ -359,16 +362,31 @@ function resolveApiBaseUrl(): string {
   return "http://localhost:8787";
 }
 
+function resolveApiAuthKey(): string | undefined {
+  const configured = (import.meta as { env?: Record<string, unknown> }).env
+    ?.VITE_RESONA_API_KEY;
+  if (typeof configured === "string" && configured.trim().length > 0) {
+    return configured.trim();
+  }
+  return undefined;
+}
+
 const defaultCandidateScorer: CandidateScorer = async ({
   situationSummary,
   candidate,
   signal,
 }) => {
+  const apiAuthKey = resolveApiAuthKey();
   const response = await fetch(`${resolveApiBaseUrl()}/api/match/score`, {
     signal,
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      ...(apiAuthKey
+        ? {
+            "x-resona-api-key": apiAuthKey,
+          }
+        : {}),
     },
     body: JSON.stringify({
       situation_summary: situationSummary,
@@ -650,8 +668,10 @@ function buildMatchResult(
 }
 
 function candidatePool(source?: Candidate[]): Candidate[] {
-  const resolved = source ?? tier2EligibleCandidates;
-  const normalized = resolved
+  if (!source) {
+    return tier2EligibleCandidates;
+  }
+  const normalized = source
     .map((candidate) => parseCandidate(candidate))
     .filter((candidate): candidate is Candidate => !!candidate);
   return normalized.filter((candidate) => candidate.qualityTier !== "tag-only");
@@ -807,10 +827,16 @@ type CreateFindMatchToolOptions = {
   allowMatchCall?: (input: {
     situation_summary: string;
     need_dimension?: string;
+    replace_last_match?: boolean;
   }) => {
     allowed: boolean;
     stage?: string;
     reason?: string;
+    next_input?: {
+      situation_summary: string;
+      need_dimension?: string;
+      replace_last_match?: boolean;
+    };
   };
 };
 
@@ -873,6 +899,7 @@ export function createFindMatchTool(
   const mode = options.mode ?? "real";
   let matchCount = 0;
   const selectedCandidateIds = new Set<string>();
+  const selectedCandidateOrder: string[] = [];
 
   return tool({
     name: "find_match",
@@ -887,6 +914,7 @@ export function createFindMatchTool(
         ...(normalizedNeedDimension
           ? { need_dimension: normalizedNeedDimension }
           : {}),
+        ...(parsed.replace_last_match ? { replace_last_match: true } : {}),
       };
 
       const gate = options.allowMatchCall?.(normalizedInput);
@@ -900,27 +928,63 @@ export function createFindMatchTool(
         return blocked;
       }
 
-      if (matchCount >= 2) {
+      const effectiveInput = gate?.next_input
+        ? findMatchInputSchema.parse(gate.next_input)
+        : normalizedInput;
+      const replacementTargetId =
+        effectiveInput.replace_last_match && selectedCandidateOrder.length > 0
+          ? selectedCandidateOrder[selectedCandidateOrder.length - 1] ?? null
+          : null;
+
+      if (matchCount >= 2 && !replacementTargetId) {
         const cappedResult = buildCapResult(
-          parsed.situation_summary,
+          effectiveInput.situation_summary,
         );
         options.onMatch?.(cappedResult);
         return cappedResult;
       }
 
-      const result = await findMatchCore(normalizedInput, mode, {
+      const result = await findMatchCore(
+        {
+          situation_summary: effectiveInput.situation_summary,
+          ...(effectiveInput.need_dimension
+            ? { need_dimension: effectiveInput.need_dimension }
+            : {}),
+        },
+        mode,
+        {
         excludedCandidateIds: selectedCandidateIds,
         candidateScorer: options.candidateScorer,
         candidateSource: options.candidateSource,
       });
 
       if (result.candidate) {
-        matchCount += 1;
-        selectedCandidateIds.add(result.candidate.id);
+        if (replacementTargetId && selectedCandidateIds.has(replacementTargetId)) {
+          selectedCandidateIds.delete(replacementTargetId);
+          const replacementIndex = selectedCandidateOrder.lastIndexOf(
+            replacementTargetId,
+          );
+          if (replacementIndex >= 0) {
+            selectedCandidateOrder.splice(replacementIndex, 1);
+          }
+          matchCount = Math.max(0, matchCount - 1);
+        }
+        if (!selectedCandidateIds.has(result.candidate.id)) {
+          matchCount += 1;
+          selectedCandidateIds.add(result.candidate.id);
+          selectedCandidateOrder.push(result.candidate.id);
+        }
       }
 
-      options.onMatch?.(result);
-      return result;
+      const resultWithMetadata = replacementTargetId
+        ? {
+            ...result,
+            replacement_of_candidate_id: replacementTargetId,
+          }
+        : result;
+
+      options.onMatch?.(resultWithMetadata);
+      return resultWithMetadata;
     },
   });
 }

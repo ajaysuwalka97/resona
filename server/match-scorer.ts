@@ -15,7 +15,7 @@ const MATCH_SCORER_TIMEOUT_MS = resolveScorerTimeoutMs();
 
 const candidateSchema = z.object({
   id: z.string().min(1),
-  name: z.string().min(1),
+  name: z.string().min(1).max(120),
   brings: z.array(
     z.object({
       kind: z.enum([
@@ -25,22 +25,22 @@ const candidateSchema = z.object({
         "network",
         "lived_experience",
       ]),
-      claim: z.string().min(1),
-      evidence: z.string().min(1),
+      claim: z.string().min(1).max(260),
+      evidence: z.string().min(1).max(900),
     }),
   ),
   triggerSurfaces: z.array(
     z.object({
-      label: z.string().min(1),
-      situationPattern: z.string().min(1),
-      whyThisPerson: z.string().min(1),
-      evidence: z.string().min(1),
+      label: z.string().min(1).max(220),
+      situationPattern: z.string().min(1).max(650),
+      whyThisPerson: z.string().min(1).max(650),
+      evidence: z.string().min(1).max(900),
     }),
   ),
 });
 
 const scoreRequestSchema = z.object({
-  situation_summary: z.string().min(1),
+  situation_summary: z.string().min(1).max(700),
   candidate: candidateSchema,
 });
 
@@ -54,6 +54,38 @@ const scoreResponseSchema = z.object({
 
 export type ScoreRequest = z.infer<typeof scoreRequestSchema>;
 export type ScoreResponse = z.infer<typeof scoreResponseSchema>;
+
+function sanitizePromptText(value: string, maxChars: number): string {
+  return value
+    .replace(/[\u0000-\u001F\u007F]/g, " ")
+    .replace(/[`$]/g, "")
+    .replace(/[<>{}]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, maxChars);
+}
+
+function sanitizeScoreRequest(input: ScoreRequest): ScoreRequest {
+  return {
+    situation_summary: sanitizePromptText(input.situation_summary, 700),
+    candidate: {
+      ...input.candidate,
+      name: sanitizePromptText(input.candidate.name, 120),
+      brings: input.candidate.brings.map((bring) => ({
+        ...bring,
+        claim: sanitizePromptText(bring.claim, 260),
+        evidence: sanitizePromptText(bring.evidence, 900),
+      })),
+      triggerSurfaces: input.candidate.triggerSurfaces.map((surface) => ({
+        ...surface,
+        label: sanitizePromptText(surface.label, 220),
+        situationPattern: sanitizePromptText(surface.situationPattern, 650),
+        whyThisPerson: sanitizePromptText(surface.whyThisPerson, 650),
+        evidence: sanitizePromptText(surface.evidence, 900),
+      })),
+    },
+  };
+}
 
 function getApiKey(): string {
   const apiKey = process.env.OPENAI_API_KEY;
@@ -85,7 +117,7 @@ function buildSystemPrompt(): string {
 }
 
 export async function scoreCandidateWithLlm(input: ScoreRequest): Promise<ScoreResponse> {
-  const parsed = scoreRequestSchema.parse(input);
+  const parsed = sanitizeScoreRequest(scoreRequestSchema.parse(input));
   const apiKey = getApiKey();
 
   const response = await fetch(`${OPENAI_BASE_URL}/chat/completions`, {
